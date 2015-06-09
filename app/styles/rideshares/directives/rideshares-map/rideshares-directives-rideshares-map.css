@@ -1,0 +1,27 @@
+/*
+Set height and width  of the #map_canvas parent div
+Defining the size of the parent div so the browser can report the size to the Google Maps API.
+ */
+.rideshare__map {
+  height: 500px;
+  width: 100%;
+}
+#map-canvas label {
+  width: auto;
+  display: inline;
+}
+#map-canvas img {
+  max-width: none;
+}
+#map_canvas {
+  position: relative;
+}
+/* Google Maps div */
+html,
+body,
+#map-canvas {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}

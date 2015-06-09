@@ -1,0 +1,29 @@
+h1 {
+  font-family: 'Racing Sans One', cursive;
+}
+/* unvisited link */
+a:link {
+  color: #00008b;
+}
+/* visited link */
+a:visited {
+  color: #00008b;
+}
+/* mouse over link */
+a:hover {
+  color: #006400;
+}
+/* selected link */
+a:active {
+  color: #00f;
+}
+.bold {
+  font-weight: bold;
+}
+.error {
+  color: #f00;
+  font-weight: bold;
+}
+ng-md-icon.white {
+  fill: #fff;
+}

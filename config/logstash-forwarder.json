@@ -1,0 +1,17 @@
+{
+  "network": {
+    "servers": ["vbox.ridesharemarket.com:9876"],
+    "ssl certificate": "/etc/pki/tls/certs/logstash-forwarder/rsm-logstash-forwarder.crt",
+    "ssl key": "/etc/pki/tls/private/logstash-forwarder/rsm-logstash-forwarder.key",
+    "ssl ca": "/etc/pki/tls/certs/logstash-forwarder/rsm-logstash-forwarder.crt",
+    "timeout": 15
+  },
+  "files": [
+    {
+      "paths": [
+        "/srv/ride-share-market-app/log/*.log"
+      ],
+      "fields": {"type": "rsm-app"}
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+.page-app.ng-enter {
+  -webkit-animation: scaleUpCenter 0.2s ease-out both;
+          animation: scaleUpCenter 0.2s ease-out both;
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+@-webkit-keyframes scaleUpCenter {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+  }
+}
+@keyframes scaleUpCenter {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+  }
+}

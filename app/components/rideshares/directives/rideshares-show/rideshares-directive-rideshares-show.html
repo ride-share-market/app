@@ -1,0 +1,85 @@
+<div flex layout="column" layout-fill layout-margin>
+
+    <div flex>
+
+        <h1>Rideshare Details</h1>
+
+        <md-button id="back" class="md-raised md-primary" ng-href="#!/">
+            &lt;&lt;&nbsp;Back
+        </md-button>
+
+        <div ng-hide="vm.ready">
+            <h3>Loading Rideshare...</h3>
+            <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+        </div>
+
+        <div ng-if="vm.errors">
+            <p ng-repeat="error in vm.errors">
+                <ng-md-icon style="fill: red" icon="error" size="24"></ng-md-icon>
+                &nbsp;
+                {{::error.title}}
+            </p>
+        </div>
+
+        <div ng-if="vm.rideshare">
+
+            <ol>
+                <li ng-repeat="waypoint in vm.rideshare.itinerary.route">
+                    {{::waypoint.place}}
+                    <span ng-if="waypoint.date" class="date"><br/>-&nbsp;{{::waypoint.date}}</span>
+                    <span ng-if="waypoint.date && waypoint.time" class="date"> @ {{::waypoint.time}}</span>
+                </li>
+            </ol>
+            <ul>
+                <li><b>Type</b>: {{::vm.rideshare.itinerary.type}}</li>
+                <li><b>Trip</b>: {{::vm.rideshare.itinerary.trip}}</li>
+                <li><b>Frequency</b>: {{::vm.rideshare.itinerary.frequency}}</li>
+                <li><b>Cost</b>: {{::vm.rideshare.itinerary.currency}}{{::vm.rideshare.itinerary.cost|number:2}}</li>
+                <li><b>Vehicle</b>: {{::vm.rideshare.itinerary.vehicle}}</li>
+                <li><b>Seats</b>: {{::vm.rideshare.itinerary.seats}}</li>
+                <li><b>Luggage</b>: {{::vm.rideshare.itinerary.luggage}}</li>
+                <li><b>Share Driving</b>: {{::vm.rideshare.itinerary.shareDriving}}</li>
+                <li><b>Smoking</b>: {{::vm.rideshare.itinerary.smoking}}</li>
+                <li><b>Last Update</b>: {{::vm.rideshare.updated_at | date:'yyyy-MM-dd'}}</li>
+                <li ng-if="vm.rideshare.itinerary.comment"><b>Rideshare comments</b>:<br/>
+                    <span style="white-space: pre-line">{{::vm.rideshare.itinerary.comment}}</span>
+                </li>
+                <div ng-repeat="provider in vm.rideshare.user.providers">
+                    <div ng-repeat="(providerName, providerData) in provider"
+                         style="display: flex; margin-top: 1em">
+                        <a ng-href="{{::providerData.url}}" target="_blank">
+                            <img ng-src="{{::providerData.image}}" class="user__image-small"/>
+                        </a>
+                        &nbsp;
+                        <a ng-href="{{::providerData.url}}" target="_blank">
+                            {{::providerData.displayName}}
+                        </a>
+                        &nbsp;
+                        <a ng-href="{{::providerData.url}}" target="_blank">
+                            <img ng-src="/images/icons/social/{{::providerName}}.svg"
+                                 height="35em"/>
+                        </a>
+                    </div>
+                </div>
+            </ul>
+
+            <md-button
+                    id="update_rideshare"
+                    class="md-raised md-primary"
+                    ng-if="vm.isOwner"
+                    ng-href="#!/rideshares/{{vm.rideshare._id}}/update">
+                Update Rideshare
+            </md-button>
+
+        </div>
+
+    </div>
+
+    <div flex>
+        <div class="rideshare__map">
+            <rsm-rideshares-map
+                    route="vm.rideshare.itinerary.route"></rsm-rideshares-map>
+        </div>
+    </div>
+
+</div>

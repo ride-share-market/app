@@ -1,0 +1,14 @@
+<p ng-if="vm.errors" ng-repeat="error in vm.errors">{{error.title}}</p>
+
+<rsm-rideshares-itinerary
+        ng-if="vm.ready && !vm.errors"
+        itinerary="vm.rideshare.rideshares[0].itinerary"
+        is-route-valid="vm.isRouteValid"
+        is-owner="vm.isOwner"
+        on-remove="vm.remove()"
+        on-save="vm.update()"></rsm-rideshares-itinerary>
+
+<work-spinner>
+        <h3>Please wait...</h3>
+        <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+</work-spinner>

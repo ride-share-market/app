@@ -1,0 +1,70 @@
+{
+  'place': 'Mountain View, CA, United States',
+  'details': {
+    'address_components': [
+      {
+        'long_name': 'Mountain View',
+        'short_name': 'Mountain View',
+        'types': [
+          'locality',
+          'political'
+        ]
+      },
+      {
+        'long_name': 'Santa Clara County',
+        'short_name': 'Santa Clara County',
+        'types': [
+          'administrative_area_level_2',
+          'political'
+        ]
+      },
+      {
+        'long_name': 'California',
+        'short_name': 'CA',
+        'types': [
+          'administrative_area_level_1',
+          'political'
+        ]
+      },
+      {
+        'long_name': 'United States',
+        'short_name': 'US',
+        'types': [
+          'country',
+          'political'
+        ]
+      }
+    ],
+    'adr_address': '<span class=\'locality\'>Mountain View</span>, <span class=\'region\'>CA</span>, <span class=\'country-name\'>USA</span>',
+    'formatted_address': 'Mountain View, CA, USA',
+    'geometry': {
+      'location': {
+        'k': 37.3860517,
+        'B': -122.0838511
+      },
+      'viewport': {
+        'Ea': {
+          'k': 37.3567599,
+          'j': 37.469887
+        },
+        'va': {
+          'j': -122.11786189999998,
+          'k': -122.04467210000001
+        }
+      }
+    },
+    'icon': 'http://maps.gstatic.com/mapfiles/place_api/icons/geocode-71.png',
+    'id': 'bb51f066ff3fd0b033db94b4e6172da84b8ae111',
+    'name': 'Mountain View',
+    'place_id': 'ChIJiQHsW0m3j4ARm69rRkrUF3w',
+    'reference': 'CoQBeQAAAC9XOTQyCaF9eG8tH-y_HZ7C3uC-fubNiZnVB6OoVUkkuBz21B5I5BTtwmoyAuauYYrJGeZRHKYZEfKIZKt3pNFk2B5cdjA56Z-S0XVfIFbnLCIGgZJdy74uTYTwyGF7EJNF--P_ZmB748eds8QP_J0zh0WvXo-cBqyT09zyuJx9EhAm_CQLEDCcpPWLaD2jVjgSGhR_5u7EJnnjHWzeaniylqxUZmsEWQ',
+    'scope': 'GOOGLE',
+    'types': [
+      'locality',
+      'political'
+    ],
+    'url': 'https://maps.google.com/maps/place?q=Mountain+View,+CA,+USA&ftid=0x808fb7495bec0189:0x7c17d44a466baf9b',
+    'vicinity': 'Mountain View',
+    'html_attributions': []
+  }
+}

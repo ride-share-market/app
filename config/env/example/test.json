@@ -1,0 +1,25 @@
+{
+  "app": {
+    "protocol": "http://",
+    "hostname": "local1.ridesharemarket.com",
+    "port": "3000"
+  },
+  "oauth": {
+    "signin": {
+      "google": "http://api.dev.loc.ridesharemarket.com:3001/signin/google",
+      "facebook": "http://api.dev.loc.ridesharemarket.com:3001/signin/facebook"
+    }
+  },
+  "e2e": {
+    "url": {
+      "tst": "http://local.ridesharemarket.com:3000",
+      "dev": "http://dev.ridesharemarket.com",
+      "stg": "http://staging.ridesharemarket.com",
+      "qas": "http://qa.ridesharemarket.com",
+      "prd": "http://ridesharemarket.com"
+    },
+    "seleniumAddress": "http://localhost:4444/wd/hub",
+    "sauceUser": "your-sauce-labs-username",
+    "sauceKey": "your-sauce-labs-key"
+  }
+}

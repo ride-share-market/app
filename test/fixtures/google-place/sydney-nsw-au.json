@@ -1,0 +1,64 @@
+{
+  'place': 'Sydney, New South Wales, Australia',
+  'details': {
+    'address_components': [
+      {
+        'long_name': 'Sydney',
+        'short_name': 'Sydney',
+        'types': [
+          'colloquial_area',
+          'locality',
+          'political'
+        ]
+      },
+      {
+        'long_name': 'New South Wales',
+        'short_name': 'NSW',
+        'types': [
+          'administrative_area_level_1',
+          'political'
+        ]
+      },
+      {
+        'long_name': 'Australia',
+        'short_name': 'AU',
+        'types': [
+          'country',
+          'political'
+        ]
+      }
+    ],
+    'adr_address': '<span class=\'locality\'>Sydney</span> <span class=\'region\'>NSW</span>, <span class=\'country-name\'>Australia</span>',
+    'formatted_address': 'Sydney NSW, Australia',
+    'geometry': {
+      'location': {
+        'k': -33.8674869,
+        'B': 151.20699020000006
+      },
+      'viewport': {
+        'Ea': {
+          'k': -34.1692489,
+          'j': -33.4245981
+        },
+        'va': {
+          'j': 150.50222899999994,
+          'k': 151.34263609999994
+        }
+      }
+    },
+    'icon': 'http://maps.gstatic.com/mapfiles/place_api/icons/geocode-71.png',
+    'id': '044785c67d3ee62545861361f8173af6c02f4fae',
+    'name': 'Sydney',
+    'place_id': 'ChIJP3Sa8ziYEmsRUKgyFmh9AQM',
+    'reference': 'CoQBeAAAAB4tN1vvRlMhL3qsFV_daK8rE35OmVHeA9EaWF_odRW7EJ6hpolxAtGPgSzRtk4KkxWWR__TPzM1UPVO2IPJAGPoUqIKO8aLt-WtjwgAQGqkqj7UV--WAjSX46tlnpugMJEkqkcLkRJIYJf3_igKWM7pUvq6_TW3CEOIXTZhXUv0EhCdsn2PxppuX-ZSRdP3Vu_dGhSP_fB7QJYV7rLF5OU7Hsdgz1XXfg',
+    'scope': 'GOOGLE',
+    'types': [
+      'colloquial_area',
+      'locality',
+      'political'
+    ],
+    'url': 'https://maps.google.com/maps/place?q=Sydney+NSW,+Australia&ftid=0x6b129838f39a743f:0x3017d681632a850',
+    'vicinity': 'Sydney',
+    'html_attributions': []
+  }
+}

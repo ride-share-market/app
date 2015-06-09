@@ -1,0 +1,21 @@
+{
+  "users": {
+    "_id": "54354a2e1268cf741d84c3e8",
+    "providers": [
+      {
+        "google": {
+          "displayName": "Net Citizen",
+          "url": "https://plus.google.com/113432303766179322441",
+          "image": "https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4232escbv5M/photo.jpg?sz=50"
+        }
+      },
+      {
+        "facebook": {
+          "displayName": "Net Citizen",
+          "url": "https://www.facebook.com/app_scoped_user_id/265843783511791/",
+          "image": "https://graph.facebook.com/265843783511791/picture"
+        }
+      }
+    ]
+  }
+}

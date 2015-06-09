@@ -1,0 +1,313 @@
+{
+  "rideshares": [
+    {
+      "_id": "55487bbe8d6b9d557d09f41f",
+      "itinerary": {
+        "route": [
+          {
+            "place": "Mountain View, CA, United States",
+            "details": {
+              "address_components": [
+                {
+                  "long_name": "Mountain View",
+                  "short_name": "Mountain View",
+                  "types": [
+                    "locality",
+                    "political"
+                  ]
+                },
+                {
+                  "long_name": "Santa Clara County",
+                  "short_name": "Santa Clara County",
+                  "types": [
+                    "administrative_area_level_2",
+                    "political"
+                  ]
+                },
+                {
+                  "long_name": "California",
+                  "short_name": "CA",
+                  "types": [
+                    "administrative_area_level_1",
+                    "political"
+                  ]
+                },
+                {
+                  "long_name": "United States",
+                  "short_name": "US",
+                  "types": [
+                    "country",
+                    "political"
+                  ]
+                }
+              ],
+              "adr_address": "<span class=\"locality\">Mountain View</span>, <span class=\"region\">CA</span>, <span class=\"country-name\">USA</span>",
+              "formatted_address": "Mountain View, CA, USA",
+              "geometry": {
+                "location": {
+                  "A": 37.3860517,
+                  "F": -122.0838511
+                },
+                "viewport": {
+                  "Ea": {
+                    "A": 37.3567599,
+                    "j": 37.4508789
+                  },
+                  "wa": {
+                    "j": -122.11786189999998,
+                    "A": -122.04467210000001
+                  }
+                }
+              },
+              "icon": "http://maps.gstatic.com/mapfiles/place_api/icons/geocode-71.png",
+              "id": "bb51f066ff3fd0b033db94b4e6172da84b8ae111",
+              "name": "Mountain View",
+              "place_id": "ChIJiQHsW0m3j4ARm69rRkrUF3w",
+              "reference": "CoQBcwAAAAS6yzsPt_FFUwA3cUgy8qgjNzyMWSmIzSfvjJS4cbtWXYypQs6VyeFBQAi0d7pAQ8GKRhiiexCwALQhqZLuLG5It1N_Yi1_Z1vm6GBSYQQXmMUAiMOLqvYBwDrlMCWkOEO3MSTdKzvf0rL9zGd-pdhcg0nrazsd3G2OM85vFCCBEhDlOj-tOLOSAo5tggVpnbJIGhQ5Dem2WzCSxFKPTAg_oI-jd49y-Q",
+              "scope": "GOOGLE",
+              "types": [
+                "locality",
+                "political"
+              ],
+              "url": "https://maps.google.com/maps/place?q=Mountain+View,+CA,+USA&ftid=0x808fb7495bec0189:0x7c17d44a466baf9b",
+              "vicinity": "Mountain View",
+              "html_attributions": []
+            }
+          },
+          {
+            "place": "Palo Alto, CA, United States",
+            "details": {
+              "address_components": [
+                {
+                  "long_name": "Palo Alto",
+                  "short_name": "Palo Alto",
+                  "types": [
+                    "locality",
+                    "political"
+                  ]
+                },
+                {
+                  "long_name": "Santa Clara County",
+                  "short_name": "Santa Clara County",
+                  "types": [
+                    "administrative_area_level_2",
+                    "political"
+                  ]
+                },
+                {
+                  "long_name": "California",
+                  "short_name": "CA",
+                  "types": [
+                    "administrative_area_level_1",
+                    "political"
+                  ]
+                },
+                {
+                  "long_name": "United States",
+                  "short_name": "US",
+                  "types": [
+                    "country",
+                    "political"
+                  ]
+                }
+              ],
+              "adr_address": "<span class=\"locality\">Palo Alto</span>, <span class=\"region\">CA</span>, <span class=\"country-name\">USA</span>",
+              "formatted_address": "Palo Alto, CA, USA",
+              "geometry": {
+                "location": {
+                  "A": 37.4418834,
+                  "F": -122.14301949999998
+                },
+                "viewport": {
+                  "Ea": {
+                    "A": 37.3801,
+                    "j": 37.4712
+                  },
+                  "wa": {
+                    "j": -122.19420000000002,
+                    "A": -122.07650000000001
+                  }
+                }
+              },
+              "icon": "http://maps.gstatic.com/mapfiles/place_api/icons/geocode-71.png",
+              "id": "16033f5c80ea86ab13c93a2691c95cd0761e5b59",
+              "name": "Palo Alto",
+              "place_id": "ChIJORy6nXuwj4ARz3b1NVL1Hw4",
+              "reference": "CnRvAAAAI1_wmvk_WimJ7ioCC7HXM-yvK8X_CpIfnYOvLsfwQO-flhayiQz2o1EEUR1ULa_58-44NddUCkzp1EGS-n6Fio5Y6wzH3_CZgntRjSsHGqad86YzIQqeeORRVelEPetKiv59aJTflOl2cc6k7lAl7BIQ38sZvOpTeVTm_F9wvV8U6xoU2ax2iSUOftphd9JjCS-W8RMMZwk",
+              "scope": "GOOGLE",
+              "types": [
+                "locality",
+                "political"
+              ],
+              "url": "https://maps.google.com/maps/place?q=Palo+Alto,+CA,+USA&ftid=0x808fb07b9dba1c39:0xe1ff55235f576cf",
+              "vicinity": "Palo Alto",
+              "html_attributions": []
+            }
+          }
+        ],
+        "type": "Wanted",
+        "trip": "One-way",
+        "frequency": "One time",
+        "vehicle": "Car",
+        "seats": "1",
+        "luggage": "Small Amount",
+        "shareDriving": "No",
+        "smoking": "No"
+      },
+      "user": "552dcc9de0fefc0d0062fce9",
+      "messages": [],
+      "updated_at": "2015-05-05T07:13:50.867Z",
+      "created_at": "2015-05-05T07:13:50.867Z",
+      "__v": 0
+    },
+    {
+      "_id": "55487ae78d6b9d557d09f41d",
+      "itinerary": {
+        "route": [
+          {
+            "place": "Woody Point, Queensland, Australia",
+            "details": {
+              "address_components": [
+                {
+                  "long_name": "Woody Point",
+                  "short_name": "Woody Point",
+                  "types": [
+                    "locality",
+                    "political"
+                  ]
+                },
+                {
+                  "long_name": "Queensland",
+                  "short_name": "QLD",
+                  "types": [
+                    "administrative_area_level_1",
+                    "political"
+                  ]
+                },
+                {
+                  "long_name": "Australia",
+                  "short_name": "AU",
+                  "types": [
+                    "country",
+                    "political"
+                  ]
+                },
+                {
+                  "long_name": "4019",
+                  "short_name": "4019",
+                  "types": ["postal_code"]
+                }
+              ],
+              "adr_address": "<span class=\"locality\">Woody Point</span> <span class=\"region\">QLD</span> <span class=\"postal-code\">4019</span>, <span class=\"country-name\">Australia</span>",
+              "formatted_address": "Woody Point QLD 4019, Australia",
+              "geometry": {
+                "location": {
+                  "A": -27.2568035,
+                  "F": 153.10428679999995
+                },
+                "viewport": {
+                  "Ea": {
+                    "A": -27.263421,
+                    "j": -27.248665
+                  },
+                  "wa": {
+                    "j": 153.09175630000004,
+                    "A": 153.11054160000003
+                  }
+                }
+              },
+              "icon": "http://maps.gstatic.com/mapfiles/place_api/icons/geocode-71.png",
+              "id": "d179ee484c1ccef2abfec0b46e745c5b6734b235",
+              "name": "Woody Point",
+              "place_id": "ChIJD5dUatHlk2sRkJ7e81qjAgU",
+              "reference": "CoQBfAAAAE-7hSxeIHX5u2GJ2TRVNlNLhxaQijqZ2H9WFgQHYqoMltwP4Bbob8tLkTlOaH0vpleTadnhq2O6bv5oH65CWx44BicWH0yFdFDyhZx2ALr6rlCpWLPfgVlQzFtpHHcfpkIMIZWpIg5aplBtejew49YmAAZPw89gdAPOINHlTo3ZEhA3_RY4Vrx7ffcqyow7nnYBGhRRIsre0ZMlNpVb1oVn_Wmj7JSXZQ",
+              "scope": "GOOGLE",
+              "types": [
+                "locality",
+                "political"
+              ],
+              "url": "https://maps.google.com/maps/place?q=Woody+Point+QLD+4019,+Australia&ftid=0x6b93e5d16a54970f:0x502a35af3de9e90",
+              "vicinity": "Woody Point",
+              "html_attributions": []
+            }
+          },
+          {
+            "place": "Nundah, Queensland, Australia",
+            "details": {
+              "address_components": [
+                {
+                  "long_name": "Nundah",
+                  "short_name": "Nundah",
+                  "types": [
+                    "locality",
+                    "political"
+                  ]
+                },
+                {
+                  "long_name": "Queensland",
+                  "short_name": "QLD",
+                  "types": [
+                    "administrative_area_level_1",
+                    "political"
+                  ]
+                },
+                {
+                  "long_name": "Australia",
+                  "short_name": "AU",
+                  "types": [
+                    "country",
+                    "political"
+                  ]
+                }
+              ],
+              "adr_address": "<span class=\"locality\">Nundah</span> <span class=\"region\">QLD</span>, <span class=\"country-name\">Australia</span>",
+              "formatted_address": "Nundah QLD, Australia",
+              "geometry": {
+                "location": {
+                  "A": -27.4033451,
+                  "F": 153.0603284
+                },
+                "viewport": {
+                  "Ea": {
+                    "A": -27.4114201,
+                    "j": -27.3889203
+                  },
+                  "wa": {
+                    "j": 153.04797789999998,
+                    "A": 153.07801100000006
+                  }
+                }
+              },
+              "icon": "http://maps.gstatic.com/mapfiles/place_api/icons/geocode-71.png",
+              "id": "ee6b994443a25880442abbea99dd1bb3b47ba3e5",
+              "name": "Nundah",
+              "place_id": "ChIJmwJpq8tZkWsRAJTe81qjAgU",
+              "reference": "CoQBcgAAAFLIYAQ30UPxNevSx7rBtjeQQgx39dDVpZQGl53437v-ii5k1y4CUhJfPw4s601ggBkTPTKgIVZlIBGjwp8S4u4EMGt6dRbsRdnk5HowUEfNZP3R62n62txzn4aK_dfHEY_QAyyunUS5jJxrXizcnyTZBp7YWzuU-bw69u8osilWEhB2bH25goz65fNsT_jofARnGhTjf2fD68hb7BozHfGfB6P-61zL7Q",
+              "scope": "GOOGLE",
+              "types": [
+                "locality",
+                "political"
+              ],
+              "url": "https://maps.google.com/maps/place?q=Nundah+QLD,+Australia&ftid=0x6b9159cbab69029b:0x502a35af3de9400",
+              "vicinity": "Nundah",
+              "html_attributions": []
+            }
+          }
+        ],
+        "type": "Wanted",
+        "trip": "One-way",
+        "frequency": "One time",
+        "vehicle": "Car",
+        "seats": "1",
+        "luggage": "Small Amount",
+        "shareDriving": "No",
+        "smoking": "No"
+      },
+      "user": "552dcc9de0fefc0d0062fce9",
+      "messages": [],
+      "updated_at": "2015-05-05T08:10:15.480Z",
+      "created_at": "2015-05-05T08:10:15.480Z",
+      "__v": 0
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  'place': 'East Palo Alto, CA, United States',
+  'details': {
+    'address_components': [
+      {
+        'long_name': 'East Palo Alto',
+        'short_name': 'East Palo Alto',
+        'types': [
+          'locality',
+          'political'
+        ]
+      },
+      {
+        'long_name': 'San Mateo County',
+        'short_name': 'San Mateo County',
+        'types': [
+          'administrative_area_level_2',
+          'political'
+        ]
+      },
+      {
+        'long_name': 'California',
+        'short_name': 'CA',
+        'types': [
+          'administrative_area_level_1',
+          'political'
+        ]
+      },
+      {
+        'long_name': 'United States',
+        'short_name': 'US',
+        'types': [
+          'country',
+          'political'
+        ]
+      }
+    ],
+    'adr_address': '<span class=\'locality\'>East Palo Alto</span>, <span class=\'region\'>CA</span>, <span class=\'country-name\'>USA</span>',
+    'formatted_address': 'East Palo Alto, CA, USA',
+    'geometry': {
+      'location': {
+        'k': 37.4688273,
+        'B': -122.14107509999997
+      },
+      'viewport': {
+        'Ea': {
+          'k': 37.451938,
+          'j': 37.484038
+        },
+        'va': {
+          'j': -122.15611189999998,
+          'k': -122.1153741
+        }
+      }
+    },
+    'icon': 'http://maps.gstatic.com/mapfiles/place_api/icons/geocode-71.png',
+    'id': '83763ebf23ed9b2d510ee8c344450239ff4c39c6',
+    'name': 'East Palo Alto',
+    'place_id': 'ChIJOc4-UaG7j4AR9a97ZWHrXzI',
+    'reference': 'CoQBegAAANhjetZZNu2j8tbrj9ZvoauoEgNAo0jUEKrDVO3-wgBPLsPsamoXKSWsz62TpO_Pw2c_rb84ly0kLFGAPrTgqCcQwOselFqry1Iy4YY5kV_h0HGUNMnY1FZNou1gl1Mi846bzFT8LWRN9tEM1AVXFUnn9jUG09fXZLwmTlrGekLxEhDjgTpfMOi0G0P8AGG8XRsXGhQyzFMbQTRPeM_Iwq4OcuO3XrgAcg',
+    'scope': 'GOOGLE',
+    'types': [
+      'locality',
+      'political'
+    ],
+    'url': 'https://maps.google.com/maps/place?q=East+Palo+Alto,+CA,+USA&ftid=0x808fbba1513ece39:0x325feb61657baff5',
+    'vicinity': 'East Palo Alto',
+    'html_attributions': []
+  }
+}

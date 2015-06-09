@@ -1,0 +1,79 @@
+<div flex="95" flex-md="80" flex-gt-md="70">
+
+    <div ng-hide="vm.ready">
+        <h3>Loading Latest Rideshares...</h3>
+        <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+    </div>
+
+    <div ng-if="vm.errors">
+        <p ng-repeat="error in vm.errors">{{ ::error.title }}</p>
+    </div>
+
+    <div ng-if="vm.ready && !vm.errors">
+
+        <h1>Latest Rideshares</h1>
+
+        <table
+                ng-if="!vm.isSmall()"
+                class="latest mobile-latest">
+            <tbody>
+
+            <tr dir-paginate="item in vm.rideshares | itemsPerPage: 5"
+                current-page="vm.pagination.current">
+                <td>
+                    <a ng-href="#!/rideshares/{{ item._id }}">{{ ::item.origin }}</a><br/>
+                    to<br/>
+                    <a ng-href="#!/rideshares/{{ item._id }}">{{ ::item.destination }}</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <table
+                ng-if="vm.isSmall()"
+                style="width: 80%"
+                class="latest">
+
+            <thead>
+            <tr>
+                <td>Rideshare Origin</td>
+                <td>Waypoints</td>
+                <td>Rideshare Destination</td>
+                <td>Last Update</td>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr dir-paginate="item in vm.rideshares | itemsPerPage: 5"
+                current-page="vm.pagination.current">
+
+                <td>
+                    <a ng-href="#!/rideshares/{{::item._id}}">
+                        <ng-md-icon style="fill: #4c7bff" icon="forward" size="18"></ng-md-icon>
+                        &nbsp;{{::item.origin}}
+                    </a>
+                </td>
+
+                <td>
+                    {{::item.waypoints}}
+                </td>
+
+                <td>
+                    {{::item.destination}}
+                </td>
+
+                <td nowrap>
+                    {{item.updated_at | date:'yyyy-MM-dd'}}
+                </td>
+            </tr>
+
+            </tbody>
+        </table>
+
+    </div>
+
+</div>
+
+<div flex="95" flex-md="80" flex-gt-md="70" layout="row" layout-align="center">
+    <dir-pagination-controls on-page-change="vm.pageChanged(newPageNumber)"></dir-pagination-controls>
+</div>

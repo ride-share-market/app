@@ -1,0 +1,23 @@
+<a href="#!/signin" ng-if="!isNavSide() && !isSignedIn()" ng-click="toggleLeftMenuOnSign()">Sign In</a>
+<a href="#!/profile/{{user.id}}" ng-if="!isNavSide() && isSignedIn()" ng-click="toggleLeftMenuOnSign()">Profile: {{ user.name }}</a>
+<a href="#!/signout" ng-if="!isNavSide() && isSignedIn()" ng-click="toggleLeftMenuOnSign()">Sign Out</a>
+
+<div ng-if="isNavSide()">
+    <md-list-item ng-if="!isSignedIn()">
+        <div class="md-tile-content">
+            <a href="#!/signin" ng-click="toggleLeftMenuOnSign()">Sign In</a>
+        </div>
+    </md-list-item>
+
+    <md-list-item ng-if="isSignedIn()">
+        <div class="md-tile-content">
+            <a href="#!/profile/{{user.id}}" ng-click="toggleLeftMenuOnSign()">Profile: {{ user.name }}</a>
+        </div>
+    </md-list-item>
+
+    <md-list-item ng-if="isSignedIn()">
+        <div class="md-tile-content">
+            <a href="#!/signout" ng-click="toggleLeftMenuOnSign()">Sign Out</a>
+        </div>
+    </md-list-item>
+</div>

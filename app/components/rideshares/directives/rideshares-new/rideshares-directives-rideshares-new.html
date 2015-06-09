@@ -1,0 +1,10 @@
+<rsm-rideshares-itinerary
+        ng-if="vm.ready"
+        itinerary="vm.rideshare.itinerary"
+        is-route-valid="vm.isRouteValid"
+        on-save="vm.create()"></rsm-rideshares-itinerary>
+
+<work-spinner>
+        <h3>Saving...</h3>
+        <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+</work-spinner>

@@ -1,0 +1,156 @@
+{
+  "rideshares": [
+    {
+      "__v": 0,
+      "itinerary": {
+        "route": [
+          {
+            "details": {
+              "html_attributions": [],
+              "vicinity": "Mountain View",
+              "url": "https://maps.google.com/maps/place?q=Mountain+View,+CA,+USA&ftid=0x808fb7495bec0189:0x7c17d44a466baf9b",
+              "types": [
+                "locality",
+                "political"
+              ],
+              "scope": "GOOGLE",
+              "reference": "CoQBeQAAAAI8AdgB2XNEbMqMETYO9Z3ejP9NlMaA8mPkkw9WA7hGdf2BQHa3-NvnTvp0x9F_sdjseN4sABNk1nga1J181K7RxciZ_RM9w-0oWASjHh2GLcjWpJHHhmbx1LV73V1PJd18-QyUXIqmD5ICwOvCQ30TaySNmIeQq9oR9tVFDGGfEhCZmpKHqtT4WpCq__292B6XGhSyXNrAsUQIeVkvnjcDA4Uooitp1g",
+              "place_id": "ChIJiQHsW0m3j4ARm69rRkrUF3w",
+              "name": "Mountain View",
+              "id": "bb51f066ff3fd0b033db94b4e6172da84b8ae111",
+              "icon": "http://maps.gstatic.com/mapfiles/place_api/icons/geocode-71.png",
+              "geometry": {
+                "viewport": {
+                  "va": {
+                    "k": -122.04467210000001,
+                    "j": -122.11786189999998
+                  },
+                  "Ea": {
+                    "j": 37.469887,
+                    "k": 37.3567599
+                  }
+                },
+                "location": {
+                  "B": -122.0838511,
+                  "k": 37.3860517
+                }
+              },
+              "formatted_address": "Mountain View, CA, USA",
+              "adr_address": "<span class=\"locality\">Mountain View</span>, <span class=\"region\">CA</span>, <span class=\"country-name\">USA</span>",
+              "address_components": [
+                {
+                  "types": [
+                    "locality",
+                    "political"
+                  ],
+                  "short_name": "Mountain View",
+                  "long_name": "Mountain View"
+                },
+                {
+                  "types": [
+                    "administrative_area_level_2",
+                    "political"
+                  ],
+                  "short_name": "Santa Clara County",
+                  "long_name": "Santa Clara County"
+                },
+                {
+                  "types": [
+                    "administrative_area_level_1",
+                    "political"
+                  ],
+                  "short_name": "CA",
+                  "long_name": "California"
+                },
+                {
+                  "types": [
+                    "country",
+                    "political"
+                  ],
+                  "short_name": "US",
+                  "long_name": "United States"
+                }
+              ]
+            },
+            "place": "Mountain View, CA, United States"
+          },
+          {
+            "details": {
+              "html_attributions": [],
+              "vicinity": "Palo Alto",
+              "url": "https://maps.google.com/maps/place?q=Palo+Alto,+CA,+USA&ftid=0x808fb07b9dba1c39:0xe1ff55235f576cf",
+              "types": [
+                "locality",
+                "political"
+              ],
+              "scope": "GOOGLE",
+              "reference": "CoQBdQAAAPG3KIPzo928bOfEnikPoY9WWbkgv0oYsXWyR6bPtkVHNVRLcRn1q8ezWs3HbGztDwO5xpBlIaSxpog2K4puPEU1UW7Jtttw7tl6eEpEieqxAsyu77qNnyd9df0Tc5kDyqGmOiuMoUvvX93sd_i2TWxeKqE1FElUlSV2nEcQ1QhWEhDaVs-aCz-OdIYcc2hnC_VnGhRK8yy-rzLTJlgcoIq2NOVHrafvsg",
+              "place_id": "ChIJORy6nXuwj4ARz3b1NVL1Hw4",
+              "name": "Palo Alto",
+              "id": "16033f5c80ea86ab13c93a2691c95cd0761e5b59",
+              "icon": "http://maps.gstatic.com/mapfiles/place_api/icons/geocode-71.png",
+              "geometry": {
+                "viewport": {
+                  "va": {
+                    "k": -122.07650000000001,
+                    "j": -122.19420000000002
+                  },
+                  "Ea": {
+                    "j": 37.4712,
+                    "k": 37.3801
+                  }
+                },
+                "location": {
+                  "B": -122.14301949999998,
+                  "k": 37.4418834
+                }
+              },
+              "formatted_address": "Palo Alto, CA, USA",
+              "adr_address": "<span class=\"locality\">Palo Alto</span>, <span class=\"region\">CA</span>, <span class=\"country-name\">USA</span>",
+              "address_components": [
+                {
+                  "types": [
+                    "locality",
+                    "political"
+                  ],
+                  "short_name": "Palo Alto",
+                  "long_name": "Palo Alto"
+                },
+                {
+                  "types": [
+                    "administrative_area_level_2",
+                    "political"
+                  ],
+                  "short_name": "Santa Clara County",
+                  "long_name": "Santa Clara County"
+                },
+                {
+                  "types": [
+                    "administrative_area_level_1",
+                    "political"
+                  ],
+                  "short_name": "CA",
+                  "long_name": "California"
+                },
+                {
+                  "types": [
+                    "country",
+                    "political"
+                  ],
+                  "short_name": "US",
+                  "long_name": "United States"
+                }
+              ]
+            },
+            "place": "Palo Alto, CA, United States"
+          }
+        ]
+      },
+      "user": "54354a2e1268cf741d84c3e8",
+      "_id": "5465f7406816c2d824be7eca",
+      "messages": [],
+      "updated_at": "2014-11-14T12:36:16.945Z",
+      "created_at": "2014-11-14T12:36:16.945Z"
+    }
+  ]
+}

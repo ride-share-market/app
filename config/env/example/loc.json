@@ -1,0 +1,13 @@
+{
+  "app": {
+    "protocol": "http://",
+    "hostname": "local.ridesharemarket.com:3000",
+    "api": "http://192.168.254.3:3001"
+  },
+  "oauth": {
+    "signin": {
+      "google": "http://api.dev.loc.ridesharemarket.com:3001/signin/google",
+      "facebook": "http://api.dev.loc.ridesharemarket.com:3001/signin/facebook"
+    }
+  }
+}

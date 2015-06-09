@@ -1,0 +1,13 @@
+{
+  "apps": [
+    {
+      "name": "app-server",
+      "script": "server.js",
+      "cwd": "/srv/ride-share-market-app",
+      "log_date_format": "YYYY-MM-DD HH:mm Z",
+      "error_file": "/srv/ride-share-market-app/log/pm2-app-server.stderr.log",
+      "out_file": "/srv/ride-share-market-app/log/pm2-app-server.stdout.log",
+      "pid_file": "/srv/ride-share-market-app/pids/pm2-app-server.pid"
+    }
+  ]
+}

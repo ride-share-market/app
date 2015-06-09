@@ -1,0 +1,70 @@
+{
+  'place': 'Palo Alto, CA, United States',
+  'details': {
+    'address_components': [
+      {
+        'long_name': 'Palo Alto',
+        'short_name': 'Palo Alto',
+        'types': [
+          'locality',
+          'political'
+        ]
+      },
+      {
+        'long_name': 'Santa Clara County',
+        'short_name': 'Santa Clara County',
+        'types': [
+          'administrative_area_level_2',
+          'political'
+        ]
+      },
+      {
+        'long_name': 'California',
+        'short_name': 'CA',
+        'types': [
+          'administrative_area_level_1',
+          'political'
+        ]
+      },
+      {
+        'long_name': 'United States',
+        'short_name': 'US',
+        'types': [
+          'country',
+          'political'
+        ]
+      }
+    ],
+    'adr_address': '<span class=\'locality\'>Palo Alto</span>, <span class=\'region\'>CA</span>, <span class=\'country-name\'>USA</span>',
+    'formatted_address': 'Palo Alto, CA, USA',
+    'geometry': {
+      'location': {
+        'k': 37.4418834,
+        'B': -122.14301949999998
+      },
+      'viewport': {
+        'Ea': {
+          'k': 37.3801,
+          'j': 37.4712
+        },
+        'va': {
+          'j': -122.19420000000002,
+          'k': -122.07650000000001
+        }
+      }
+    },
+    'icon': 'http://maps.gstatic.com/mapfiles/place_api/icons/geocode-71.png',
+    'id': '16033f5c80ea86ab13c93a2691c95cd0761e5b59',
+    'name': 'Palo Alto',
+    'place_id': 'ChIJORy6nXuwj4ARz3b1NVL1Hw4',
+    'reference': 'CoQBdQAAADQ_qs2w6LjGOUSOgZne-dwRMyL3Jki3hNgJxgrwH0CT5wf2rpQAvJwtC9nVhFX1fK1Phv2zyJAfpA2VzXOV7emB6VkWXuQ4RXeTe6LICJu3ttzwgPdX1KeNKqESw9Lc5Tcl-HLxaMYYqnZzSEXp0bZvQu4pCVXCJmFpNDCw0Cn8EhDYArojQvURZxUExiRpcb79GhS1m8B7YPkUxYL2XYHSbhQ3jivd0g',
+    'scope': 'GOOGLE',
+    'types': [
+      'locality',
+      'political'
+    ],
+    'url': 'https://maps.google.com/maps/place?q=Palo+Alto,+CA,+USA&ftid=0x808fb07b9dba1c39:0xe1ff55235f576cf',
+    'vicinity': 'Palo Alto',
+    'html_attributions': []
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "errors": [
+    {
+      "code": "not_found",
+      "title": "Rideshare not found."
+    }
+  ]
+}

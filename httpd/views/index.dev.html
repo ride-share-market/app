@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Ride Share Market</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <!-- build:css css/styles.css -->
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css"/>
+    <link rel="stylesheet" href="bower_components/pickadate/lib/themes/classic.css">
+    <link rel="stylesheet" href="bower_components/pickadate/lib/themes/classic.date.css">
+    <link rel="stylesheet" href="bower_components/pickadate/lib/themes/classic.time.css">
+    <link rel="stylesheet" href="styles/app/css/app-css-animations.css"/>
+    <link rel="stylesheet" href="styles/app/css/app-css-main.css"/>
+    <link rel="stylesheet" href="styles/app/directives/nav-top/app-directive-nav-top.css"/>
+    <link rel="stylesheet" href="styles/rideshares/css/rideshares.css"/>
+    <link rel="stylesheet" href="styles/rideshares/css/animations.css"/>
+    <link rel="stylesheet" href="styles/rideshares/css/rideshares-pagination.css"/>
+    <link rel="stylesheet" href="styles/rideshares/directives/rideshares-map/rideshares-directives-rideshares-map.css"/>
+    <link rel="stylesheet" href="styles/users/css/users.css"/>
+    <!-- endbuild -->
+    <link href='https://fonts.googleapis.com/css?family=Racing+Sans+One' rel='stylesheet' type='text/css'>
+</head>
+<body id="appBody" flex layout="column" layout-fill>
+
+<rsm-nav-top></rsm-nav-top>
+
+<rsm-nav-side></rsm-nav-side>
+
+<!-- Application content here -->
+<div flex
+     layout="row"
+     layout-align-gt-sm="center"
+     layout-sm="column"
+     layout-align-sm="start center"
+     style="overflow: auto"
+     class="page-app"
+     ui-view></div>
+
+<work-spinner>
+    <div layout="row" layout-align="center">
+        <md-progress-linear md-mode="indeterminate"></md-progress-linear>
+        &nbsp;
+    </div>
+</work-spinner>
+
+<script type="text/javascript">
+    window.rsmConfig = {
+        version: '<%= version %>',
+        api: '<%= api %>'
+    };
+</script>
+
+<!-- build:js scripts/app.js -->
+<script src="bower_components/ramda/dist/ramda.js"></script>
+
+<script src="bower_components/jquery/dist/jquery.js"></script>
+
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-messages/angular-messages.js"></script>
+
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-aria/angular-aria.js"></script>
+<script src="bower_components/angular-material/angular-material.js"></script>
+
+<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+
+<script src="bower_components/localforage/dist/localforage.js"></script>
+<script src="bower_components/angular-localforage/dist/angular-localForage.js"></script>
+<script src="bower_components/lodash/lodash.js"></script>
+<script src="bower_components/restangular/dist/restangular.js"></script>
+<script src="bower_components/angular-jwt/dist/angular-jwt.js"></script>
+<script src="bower_components/ngAutocomplete/src/ngAutocomplete.js"></script>
+<script src="bower_components/angular-material-icons/angular-material-icons.js"></script>
+<script src="bower_components/angular-utils-pagination/dirPagination.js"></script>
+<script src="bower_components/pickadate/lib/picker.js"></script>
+<script src="bower_components/pickadate/lib/picker.date.js"></script>
+<script src="bower_components/pickadate/lib/picker.time.js"></script>
+<script src="bower_components/angularytics/dist/angularytics.min.js"></script>
+
+<script src="components/app/app.js"></script>
+<script src="components/app/app-routes.js"></script>
+<script src="components/app/controllers/app-controller-main.js"></script>
+<script src="components/app/filters/app-filter-capitalize.js"></script>
+<script src="components/app/services/app-service-request-counter.js"></script>
+<script src="components/app/services/app-service-nav-top-ready.js"></script>
+<script src="components/app/services/app-service-nav-top-links.js"></script>
+<script src="components/app/services/app-service-nav-toggle.js"></script>
+<script src="components/app/services/app-service-local-storage.js"></script>
+<script src="components/app/directives/nav-top/app-directive-nav-top.js"></script>
+<script src="components/app/directives/nav-side/app-directive-nav-side.js"></script>
+<script src="components/app/directives/nav-signin-signout/app-directive-nav-signin-signout.js"></script>
+<script src="components/app/directives/work-spinner/app-directive-work-spinner.js"></script>
+
+<script src="components/users/users-app.js"></script>
+<script src="components/users/users-routes.js"></script>
+<script src="components/app/app-routes-auth-policy.js"></script>
+<script src="components/users/controllers/users-controller-welcome.js"></script>
+<script src="components/users/controllers/users-controller-signout.js"></script>
+<script src="components/users/controllers/users-controller-profile.js"></script>
+<script src="components/users/services/users-service-url-inspector.js"></script>
+<script src="components/users/services/users-service-jwt.js"></script>
+<script src="components/users/services/users-service-user-profile.js"></script>
+<script src="components/users/directives/users-profile/users-directive-user-profile.js"></script>
+
+<script src="components/rideshares/rideshares-app.js"></script>
+<script src="components/rideshares/rideshares-routes.js"></script>
+<script src="components/rideshares/controllers/rideshares-controller-rideshare.js"></script>
+<script src="components/rideshares/services/rideshares-service-rideshares-get.js"></script>
+<script src="components/rideshares/services/rideshares-service-rideshares-create.js"></script>
+<script src="components/rideshares/services/rideshares-service-rideshares-route-update.js"></script>
+<script src="components/rideshares/services/rideshares-service-rideshares-sort.js"></script>
+<script src="components/rideshares/directives/rideshares-latest/rideshares-directives-rideshares-latest.js"></script>
+<script src="components/rideshares/directives/rideshares-new/rideshares-directives-rideshares-new.js"></script>
+<script src="components/rideshares/directives/rideshares-itinerary/rideshares-directives-rideshares-itinerary.js"></script>
+<script src="components/rideshares/directives/rideshares-show/rideshares-directive-rideshares-show.js"></script>
+<script src="components/rideshares/directives/rideshares-update/rideshares-directive-rideshares-update.js"></script>
+<script src="components/rideshares/directives/rideshares-map/rideshares-directives-rideshares-map.js"></script>
+<script src="components/rideshares/directives/rideshares-pick-a-date/rideshares-directive-rideshares-pick-a-date.js"></script>
+<script src="components/rideshares/directives/rideshares-pick-a-time/rideshares-directive-rideshares-pick-a-time.js"></script>
+<script src="components/rideshares/directives/rideshares-form-input/rideshares-form-input.js"></script>
+
+<script src="template-cache/templates.js"></script>
+
+<script src="components/app/app-init.js"></script>
+<!-- endbuild -->
+
+<script src="https://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-46997328-2', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</body>
+</html>

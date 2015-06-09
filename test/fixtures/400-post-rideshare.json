@@ -1,0 +1,13 @@
+{
+  "errors": [
+    {
+      "code": "validation_error",
+      "error": {
+        "name": "ValidatorError",
+        "path": "itinerary",
+        "type": "required"
+      },
+      "title": "Itinerary is required."
+    }
+  ]
+}

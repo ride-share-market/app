@@ -1,0 +1,17 @@
+<header>
+
+    <div class="b-header__pos_relative">
+
+        <span class="logo" ng-click="toggleLeftMenu()">
+            <ng-md-icon class="white" hide-gt-md icon="menu" size="18"></ng-md-icon>&nbsp;
+            Ride Share Market
+        </span>
+
+        <div hide-sm hide-md class="b-header__pos_right">
+            <a ng-repeat="link in links" ng-href="{{link.url}}">{{link.text}}</a>
+            <rsm-nav-signin-signout></rsm-nav-signin-signout>
+        </div>
+
+    </div>
+
+</header>

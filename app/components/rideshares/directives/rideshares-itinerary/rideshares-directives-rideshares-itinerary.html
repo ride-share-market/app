@@ -1,0 +1,345 @@
+<form
+        name="RidesharesForm"
+        id="RidesharesForm"
+        novalidate
+        ng-submit="vm.addPlace()">
+
+    <div flex layout="row" layout-margin layout-fill layout-padding
+         style="white-space: nowrap;">
+
+        <fieldset>
+            <legend>
+                <ng-md-icon style="fill: blue" icon="directions" size="18"></ng-md-icon>
+                &nbsp;Waypoints
+            </legend>
+
+            <input
+                    name="place"
+                    id="place"
+                    type="text"
+                    ng-model="vm.place"
+                    ng-autocomplete="vm.place"
+                    details="vm.placeDetails"/>
+
+            <md-button
+                    id="add_place"
+                    class="md-raised md-primary"
+                    ng-disabled="!vm.place || !vm.placeDetails"
+                    ng-click="submit()">+ Add Place
+            </md-button>
+
+            <div ng-if="vm.isSmall()"
+                 ng-repeat="place in vm.itinerary.route"
+                 id="place_{{ $index }}"
+                 style="display: flex; flex-direction: row; flex-wrap: nowrap; font-size: 18px; margin-bottom: 0.5em"
+                 pick-a-date
+                 pick-a-time>
+                <ng-md-icon style="fill: green; cursor: pointer;" icon="swap_vert" size="18"
+                            ng-click="vm.itinerary.route.move($index,$index+1)"
+                            ng-if="$index + 1 < vm.itinerary.route.length"></ng-md-icon>
+                <ng-md-icon style="fill: blue" icon="place" size="18"
+                            ng-if="$index + 1 === vm.itinerary.route.length"></ng-md-icon>
+                &nbsp;&nbsp;
+                <ng-md-icon style="fill: red; cursor: pointer;" icon="cancel" size="18"
+                            ng-click="vm.routeRemove(vm.itinerary.route, $index)"></ng-md-icon>
+                &nbsp;&nbsp;
+
+                {{ ::place.place }}
+
+                &nbsp;
+                <ng-md-icon style="fill: blue" icon="schedule" size="18"></ng-md-icon>
+                &nbsp;
+
+                <div style="position: relative">
+                    <input
+                            id="place_{{ $index }}_date"
+                            placeholder="Departure or Arrival Date"
+                            ng-model="vm.itinerary.route[$index].date"/>
+                </div>
+
+                &nbsp;@&nbsp;
+
+                <div style="position: relative">
+                    <input
+                            id="place_{{ $index }}_time"
+                            placeholder="Departure or Arrival Time"
+                            ng-model="vm.itinerary.route[$index].time"/>
+                </div>
+
+
+            </div>
+
+            <div ng-if="!vm.isSmall()"
+                 ng-repeat="place in vm.itinerary.route"
+                 id="place2_{{ $index }}"
+                 style="display: flex; flex-direction: column; font-size: 18px"
+                 pick-a-date
+                 pick-a-time>
+
+
+                <div flex>
+                    <ng-md-icon style="fill: green; cursor: pointer;" icon="swap_vert" size="18"
+                                ng-click="vm.itinerary.route.move($index,$index+1)"
+                                ng-if="$index + 1 < vm.itinerary.route.length"></ng-md-icon>
+                    <ng-md-icon style="fill: blue" icon="place" size="18"
+                                ng-if="$index + 1 === vm.itinerary.route.length"></ng-md-icon>
+                    &nbsp;&nbsp;
+                    <ng-md-icon style="fill: red; cursor: pointer;" icon="cancel" size="18"
+                                ng-click="vm.routeRemove(vm.itinerary.route, $index)"></ng-md-icon>
+                    &nbsp;&nbsp;
+
+                    {{ ::place.place }}
+
+                </div>
+
+
+                <div style="display: flex; flex-direction: column">
+                    <div style="display: flex; flex-direction: row; padding-left: 3em; margin: 0.3em 0 0.3em 0">
+                        &nbsp;
+                        <ng-md-icon style="fill: blue" icon="schedule" size="18"></ng-md-icon>
+                        &nbsp;
+                        <div style="position: relative">
+                            <input
+                                    id="place2_{{ $index }}_date"
+                                    placeholder="Departure or Arrival Date"
+                                    ng-model="vm.itinerary.route[$index].date"/>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; flex-direction: row; padding-left: 3em; margin: 0.3em 0 0.3em 0">
+                        &nbsp;@&nbsp;
+                        <div style="position: relative">
+                            <input
+                                    id="place2_{{ $index }}_time"
+                                    placeholder="Departure or Arrival Time"
+                                    ng-model="vm.itinerary.route[$index].time"/>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </fieldset>
+
+    </div>
+
+    <div flex layout-gt-sm="row" layout-sm="column" layout-margin layout-fill ng-if="vm.itinerary.route.length > 1"
+         class="animate-if">
+
+        <div flex>
+            <fieldset>
+                <legend>
+                    <ng-md-icon style="fill: blue" icon="time_to_leave" size="18"></ng-md-icon>
+                    &nbsp;Rideshare Details
+                </legend>
+
+                <div forminput>
+                    <label for="type">Type</label>
+                    <select
+                            id="type"
+                            name="type"
+                            ng-model="vm.itinerary.type"
+                            ng-options="o as o for o in vm.types"></select>
+                    <!--<md-select
+                                    name="type"
+                                    ng-model="vm.itinerary.type">
+                                <md-option ng-repeat="o in vm.types" value="{{o}}">{{o}}</md-option>
+                            </md-select>-->
+                </div>
+
+                <div forminput>
+                    <label for="trip">Trip</label>
+                    <select
+                            id="trip"
+                            name="trip"
+                            ng-model="vm.itinerary.trip"
+                            ng-options="o as o for o in vm.trips"></select>
+                </div>
+
+                <div forminput>
+                    <label for="frequency">Frequency</label>
+                    <select
+                            id="frequency"
+                            name="frequency"
+                            ng-model="vm.itinerary.frequency"
+                            ng-options="o as o for o in vm.frequencies"></select>
+                </div>
+
+                <div forminput>
+                    <label for="currency">Cost</label>
+                    <select
+                            id="currency"
+                            name="currency"
+                            ng-model="vm.itinerary.currency"
+                            ng-options="o as o for o in vm.currencies"></select>
+                    &nbsp;
+                    <input
+                            type="number"
+                            id="cost"
+                            name="cost"
+                            required
+                            min="0"
+                            max="500000"
+                            ng-maxlength="6"
+                            ng-model="vm.itinerary.cost"
+                            aria-label="cost">
+
+                    <div ng-messages="RidesharesForm.cost.$error">
+                        <p class="error" ng-message="required">! Cost is required, it may be set to 0.</p>
+
+                        <p class="error" ng-message="number">! Cost must be a number.</p>
+
+                        <p class="error" ng-message="max">! Cost must be a number between 0-500,000.</p>
+
+                        <p class="error" ng-message="maxlength">! Cost must be a number between 0-500,000.</p>
+                    </div>
+                </div>
+
+
+            </fieldset>
+
+        </div>
+
+        <div flex>
+            <fieldset>
+                <legend>
+                    <ng-md-icon style="fill: blue" icon="settings" size="18"></ng-md-icon>
+                    &nbsp;Vehicle Details
+                </legend>
+
+                <div forminput>
+                    <label for="vehicle">Type</label>
+                    <select
+                            id="vehicle"
+                            name="vehicle"
+                            ng-model="vm.itinerary.vehicle"
+                            ng-options="o as o for o in vm.vehicleTypes"></select>
+                </div>
+
+                <div forminput>
+                    <label for="seats">Available Seats</label>
+                    <select
+                            id="seats"
+                            name="seats"
+                            ng-model="vm.itinerary.seats"
+                            ng-options="o as o for o in vm.seats"></select>
+                </div>
+
+                <!--<span style="font-weight: bold">Available Seats</span>:&nbsp;
+                <md-select
+                        name="seats"
+                        ng-model="vm.itinerary.seats">
+                    <md-option ng-repeat="o in vm.seats" value="{{o}}">{{o}}</md-option>
+                </md-select>-->
+
+                <div forminput>
+                    <label for="luggage">Luggage</label>
+                    <select
+                            id="luggage"
+                            name="luggage"
+                            ng-model="vm.itinerary.luggage"
+                            ng-options="o as o for o in vm.luggage"></select>
+                </div>
+
+                <div forminput>
+                    <label>Share Driving</label>
+                    <span ng-repeat="option in vm.shareDriving">
+                        <input
+                                type="radio"
+                                id="shareDriving_{{ $index }}"
+                                name="shareDriving"
+                                ng-model="vm.itinerary.shareDriving"
+                                ng-value="option"/>
+                            <label class="radiobutton" for="shareDriving_{{ $index }}">{{ option }}</label>
+                    </span>
+                </div>
+
+                <div forminput>
+                    <label>Smoking</label>
+                    <span ng-repeat="option in vm.smoking">
+                        <input
+                                type="radio"
+                                id="smoking_{{ $index }}"
+                                name="smoking"
+                                ng-model="vm.itinerary.smoking"
+                                ng-value="option"/>
+                            <label class="radiobutton" for="smoking_{{ $index }}">{{ option }}</label>
+                    </span>
+                </div>
+                <!-- Angular Material Design
+                <br/>
+                <span style="font-weight: bold">Smoking</span>:&nbsp;
+                <md-radio-group ng-model="vm.itinerary.smoking" class="md-primary">
+                    <md-radio-button ng-repeat="d in vm.smoking"
+                                     ng-value="d.value">
+                        {{ d.label }}
+                    </md-radio-button>
+                </md-radio-group>-->
+
+            </fieldset>
+        </div>
+
+        <div ng-if="vm.isSmall()" flex>&nbsp;</div>
+
+    </div>
+
+    <div flex layout-gt-sm="row" layout-sm="column" layout-margin layout-fill class="animate-if"
+         ng-if="vm.itinerary.route.length > 1">
+        <div flex>
+            <fieldset>
+                <legend>
+                    <ng-md-icon style="fill: blue" icon="settings" size="18"></ng-md-icon>
+                    &nbsp;Comments
+                </legend>
+            <textarea
+                    style="width:100%"
+                    rows="5"
+                    ng-model="vm.itinerary.comment"
+                    id="comment"
+                    name="comment"
+                    ng-maxlength="250"
+                    placeholder="Rideshare details."></textarea>
+
+                <i>Comment length characters available: <b>{{250 - RidesharesForm.comment.$viewValue.length}}</b></i>
+                <div ng-messages="RidesharesForm.comment.$error">
+                    <p class="error" ng-message="maxlength">! Maximum Comment length is 250 characters.</p>
+                </div>
+            </fieldset>
+        </div>
+        <div ng-if="vm.isSmall()" flex>&nbsp;</div>
+    </div>
+
+    <div flex layout-fill layout-margin ng-if="vm.itinerary.route.length > 1" class="animate-if">
+        <div style="display: flex; flex-direction: row; flex-wrap: nowrap">
+            <md-button
+                    id="save_rideshare"
+                    class="md-raised md-primary"
+                    ng-if="vm.itinerary.route.length > 1"
+                    ng-disabled="!RidesharesForm.$valid || !vm.isRouteValid"
+                    ng-click="vm.save()">
+                <img src="images/icons/green_tick.svg" height="18px"/>
+                Save Rideshare&nbsp;
+            </md-button>
+            &nbsp;
+            <md-button
+                    id="remove_rideshare"
+                    class="md-raised md-warn"
+                    ng-if="vm.isOwner"
+                    ng-click="vm.confirmRemove($event)">
+                <img src="images/icons/trash.svg" height="18px"/>
+                Remove Rideshare&nbsp;
+            </md-button>
+        </div>
+    </div>
+
+</form>
+
+<div flex layout="column" layout-fill layout-margin ng-if="vm.itinerary.route.length > 1">
+    <div flex>
+        <div class="rideshare__map">
+            <rsm-rideshares-map
+                    route="vm.itinerary.route"></rsm-rideshares-map>
+        </div>
+    </div>
+</div>

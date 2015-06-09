@@ -1,0 +1,37 @@
+<div flex="95" flex-gt-sm="70">
+
+    <h3 ng-hide="user.ready">
+        Loading profile...
+        <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+    </h3>
+
+    <div ng-show="user.ready">
+
+        <div ng-if="user.error">
+            <p ng-repeat="error in user.error">{{::error.title}}</p>
+        </div>
+
+        <div ng-if="user.profile" style="display: flex; flex-direction: column">
+
+            <div ng-repeat="provider in user.profile.providers">
+                <div ng-repeat="(providerName, providerData) in provider" style="display: flex; margin: 0.2em">
+                    <div style="padding-right: 0.5em">
+                        <a ng-href="{{::providerData.url}}" target="_blank">
+                            <img ng-src="{{::providerData.image}}" class="user__image-small"/>
+                        </a>
+                    </div>
+                    <div style="padding-right: 0.5em">
+                        <a ng-href="{{::providerData.url}}" target="_blank">{{::providerData.displayName}}</a>
+                    </div>
+                    <div>
+                        <img ng-src="/images/icons/social/{{::providerName}}.svg"
+                             height="35em"/>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

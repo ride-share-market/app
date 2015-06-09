@@ -1,0 +1,20 @@
+<md-sidenav md-component-id="left" class="md-sidenav-left" md-swipe-left="toggleLeftMenu()">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <span>Menu</span>
+        </div>
+    </md-toolbar>
+    <md-list>
+
+        <md-list-item ng-repeat="link in links">
+            <div class="md-tile-content">
+                <a ng-href="{{link.url}}" ng-click="toggleLeftMenu()">{{link.text}}</a>
+            </div>
+        </md-list-item>
+
+        <rsm-nav-signin-signout toggle-nav-side="true"></rsm-nav-signin-signout>
+
+        <md-divider></md-divider>
+    </md-list>
+
+</md-sidenav>

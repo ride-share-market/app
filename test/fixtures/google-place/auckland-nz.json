@@ -1,0 +1,70 @@
+{
+  'place': 'Auckland, New Zealand',
+  'details': {
+    'address_components': [
+      {
+        'long_name': 'Auckland',
+        'short_name': 'Auckland',
+        'types': [
+          'locality',
+          'political'
+        ]
+      },
+      {
+        'long_name': 'Auckland',
+        'short_name': 'Auckland',
+        'types': [
+          'administrative_area_level_2',
+          'political'
+        ]
+      },
+      {
+        'long_name': 'Auckland',
+        'short_name': 'Auckland',
+        'types': [
+          'administrative_area_level_1',
+          'political'
+        ]
+      },
+      {
+        'long_name': 'New Zealand',
+        'short_name': 'NZ',
+        'types': [
+          'country',
+          'political'
+        ]
+      }
+    ],
+    'adr_address': '<span class=\'locality\'>Auckland</span>, <span class=\'country-name\'>New Zealand</span>',
+    'formatted_address': 'Auckland, New Zealand',
+    'geometry': {
+      'location': {
+        'k': -36.8484597,
+        'B': 174.76333150000005
+      },
+      'viewport': {
+        'Ea': {
+          'k': -37.0654751,
+          'j': -36.660571
+        },
+        'va': {
+          'j': 174.44380160000003,
+          'k': 175.2871371
+        }
+      }
+    },
+    'icon': 'http://maps.gstatic.com/mapfiles/place_api/icons/geocode-71.png',
+    'id': '088418ddc17fef2513462d92dbee1355929b35ed',
+    'name': 'Auckland',
+    'place_id': 'ChIJ--acWvtHDW0RF5miQ2HvAAU',
+    'reference': 'CoQBeAAAABm_j9sSXRy2t1FRVf_zkl4F0OKiMJQNj7nDubUkll7CFZdae8hNnGlgT8fc4W1SHmAdXGJ1-LEXaFwnZBw8KqQZZZ2LtGjHQb1ocb_SkxzbLlZ19ZsUsSt17gOl6GzmDMvh3XA2F8gA3Nrdp552fRmGKMpyOq_Cs3IFHchMFTlCEhAuU3lk3f4AECKHQKf1uyhyGhSuzI1XezgnrdkCQgdkEiWV-z50ug',
+    'scope': 'GOOGLE',
+    'types': [
+      'locality',
+      'political'
+    ],
+    'url': 'https://maps.google.com/maps/place?q=Auckland,+New+Zealand&ftid=0x6d0d47fb5a9ce6fb:0x500ef6143a29917',
+    'vicinity': 'Auckland',
+    'html_attributions': []
+  }
+}
