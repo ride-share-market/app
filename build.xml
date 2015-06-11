@@ -55,7 +55,7 @@
 
     <target name="npm-local" depends="npm-global">
         <exec executable="${node.path}/npm" failonerror="true">
-            <env key="PATH" value="${node.path}:${env.PATH}"/>
+            <env key="PATH" path="${node.path}:${env.PATH}"/>
             <arg value="install"/>
         </exec>
     </target>
