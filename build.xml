@@ -1,8 +1,62 @@
 <?xml version="1.0"?>
 <project name="Ride Share Market App" default="main" basedir=".">
 
-    <target name="main">
-        <echo message="Downloading Node..."/>
+    <property name="node.version" value="1.5.1"/>
+
+    <property name="node.src" value="bin"/>
+
+    <property name="node.path" value="${node.src}/iojs-v${node.version}-linux-x64/bin"/>
+
+    <property name="node.archive" value="iojs-v${node.version}-linux-x64.tar.gz"/>
+
+    <property name="node.url" value="https://iojs.org/download/release/v${node.version}/${node.archive}"/>
+
+    <!-- Test if node exists -->
+    <target name="test-node">
+        <condition property="is.node.exists">
+            <resourceexists>
+                <file file="${node.path}/node"/>
+            </resourceexists>
+        </condition>
     </target>
+
+    <!-- Download and install node if node binary is not present -->
+    <target name="install-node" unless="is.node.exists" depends="test-node">
+        <sequential>
+            <echo message="==> Downloading Node"/>
+            <mkdir dir="${node.src}"/>
+            <get
+                    src="${node.url}"
+                    dest="${node.src}/${node.archive}"/>
+            <exec executable="tar" dir="${node.src}">
+                <arg value="-zxpf"/>
+                <arg value="${node.archive}"/>
+            </exec>
+        </sequential>
+    </target>
+
+    <!-- Check node binary -->
+    <target name="check-node" depends="install-node">
+        <exec executable="${node.path}/node" failonerror="true">
+            <arg value="-v"/>
+        </exec>
+    </target>
+
+    <target name="npm-global" depends="check-node">
+        <exec executable="${node.path}/npm" failonerror="true">
+            <arg value="install"/>
+            <arg value="-g"/>
+            <arg value="gulp"/>
+            <arg value="bower"/>
+        </exec>
+    </target>
+
+    <target name="npm-local" depends="npm-global">
+        <exec executable="${node.path}/npm" failonerror="true">
+            <arg value="install"/>
+        </exec>
+    </target>
+
+    <target name="main" depends="npm-local"/>
 
 </project>
