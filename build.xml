@@ -62,10 +62,20 @@
 
     <target name="bower" depends="npm-local">
         <exec executable="${node.path}/bower" failonerror="true">
+            <env key="PATH" path="${node.path}:${env.PATH}"/>
             <arg value="install"/>
         </exec>
     </target>
 
-    <target name="main" depends="bower"/>
+    <!-- Initialize application configs -->
+
+    <target name="gulp-init" depends="bower">
+        <exec executable="${node.path}/gulp" failonerror="true">
+            <env key="PATH" path="${node.path}:${env.PATH}"/>
+            <arg value="init"/>
+        </exec>
+    </target>
+
+    <target name="main" depends="gulp-init"/>
 
 </project>
