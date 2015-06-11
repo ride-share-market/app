@@ -76,6 +76,13 @@
         </exec>
     </target>
 
-    <target name="main" depends="gulp-init"/>
+    <target name="test" depends="gulp-init">
+        <exec executable="${node.path}/gulp" failonerror="true">
+            <env key="PATH" path="${node.path}:${env.PATH}"/>
+            <arg value="test"/>
+        </exec>
+    </target>
+
+    <target name="main" depends="test"/>
 
 </project>
