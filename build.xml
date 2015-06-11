@@ -60,6 +60,12 @@
         </exec>
     </target>
 
-    <target name="main" depends="npm-local"/>
+    <target name="bower" depends="npm-local">
+        <exec executable="${node.path}/bower" failonerror="true">
+            <arg value="install"/>
+        </exec>
+    </target>
+
+    <target name="main" depends="bower"/>
 
 </project>
