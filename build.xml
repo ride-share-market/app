@@ -97,6 +97,11 @@
         </exec>
     </target>
 
-    <target name="main" depends="gulp-lint"/>
+    <target name="main" depends="gulp-lint">
+        <exec executable="grep">
+            <arg value="version"/>
+            <arg value="package.json"/>
+        </exec>
+    </target>
 
 </project>
