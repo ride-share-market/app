@@ -76,13 +76,27 @@
         </exec>
     </target>
 
-    <target name="test" depends="gulp-init">
+    <target name="gulp-test" depends="gulp-init">
         <exec executable="${node.path}/gulp" failonerror="true">
             <env key="PATH" path="${node.path}:${env.PATH}"/>
             <arg value="test"/>
         </exec>
     </target>
 
-    <target name="main" depends="test"/>
+    <target name="gulp-karma" depends="gulp-test">
+        <exec executable="${node.path}/gulp" failonerror="true">
+            <env key="PATH" path="${node.path}:${env.PATH}"/>
+            <arg value="karma-single-run"/>
+        </exec>
+    </target>
+
+    <target name="gulp-lint" depends="gulp-karma">
+        <exec executable="${node.path}/gulp" failonerror="true">
+            <env key="PATH" path="${node.path}:${env.PATH}"/>
+            <arg value="lint"/>
+        </exec>
+    </target>
+
+    <target name="main" depends="gulp-lint"/>
 
 </project>
