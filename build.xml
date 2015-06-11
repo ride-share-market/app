@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<project name="Ride Share Market App" default="main" basedir=".">
+
+    <target name="main">
+        <echo message="Downloading Node..."/>
+    </target>
+
+</project>
