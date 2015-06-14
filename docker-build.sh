@@ -4,7 +4,7 @@ set -e
 
 PRIVATE_REGISTRY=192.168.33.10:5000
 
-CONTAINER_OWNER=rudijs
+CONTAINER_OWNER=ride-share-market
 
 CONTAINER_NAME=rsm-app
 
