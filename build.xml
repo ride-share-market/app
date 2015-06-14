@@ -98,7 +98,14 @@
         </exec>
     </target>
 
-    <target name="main" depends="gulp-lint">
+    <target name="gulp-build" depends="gulp-lint">
+        <exec executable="${node.path}/gulp" failonerror="true">
+            <env key="PATH" path="${node.path}:${env.PATH}"/>
+            <arg value="build"/>
+        </exec>
+    </target>
+
+    <target name="main" depends="gulp-build">
         <exec executable="grep">
             <arg value="version"/>
             <arg value="package.json"/>
