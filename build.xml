@@ -3,6 +3,8 @@
 
     <property environment="env"/>
 
+    <property name="config.src" value="/home/ubuntu/config/app/config/env"/>
+
     <property name="node.version" value="1.5.1"/>
 
     <property name="node.src" value="/var/lib/jenkins/tmp"/>
@@ -69,11 +71,10 @@
 
     <!-- Initialize application configs -->
 
-    <target name="gulp-init" depends="bower">
-        <exec executable="${node.path}/gulp" failonerror="true">
-            <env key="PATH" path="${node.path}:${env.PATH}"/>
-            <arg value="init"/>
-        </exec>
+    <target name="copy-config" depends="npm-local">
+        <copy todir="config/env" overwrite="true">
+            <fileset dir="${config.src}"/>
+        </copy>
     </target>
 
     <target name="gulp-test" depends="gulp-init">
