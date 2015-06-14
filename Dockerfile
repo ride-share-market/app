@@ -1,4 +1,4 @@
-FROM rudijs/rsm-iojs:0.0.1
+FROM ride-share-market/rsm-iojs:1.5.1
 MAINTAINER Ride Share Market "systemsadmin@ridesharemarket.com"
 
 # NPM package cache
