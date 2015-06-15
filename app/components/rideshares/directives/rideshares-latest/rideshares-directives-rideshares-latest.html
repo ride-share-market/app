@@ -18,7 +18,7 @@
                 class="latest mobile-latest">
             <tbody>
 
-            <tr dir-paginate="item in vm.rideshares | itemsPerPage: 5"
+            <tr dir-paginate="item in vm.rideshares | itemsPerPage: vm.pagination.itemsPerPage"
                 current-page="vm.pagination.current">
                 <td>
                     <a ng-href="#!/rideshares/{{ item._id }}">{{ ::item.origin }}</a><br/>
@@ -44,7 +44,7 @@
             </thead>
 
             <tbody>
-            <tr dir-paginate="item in vm.rideshares | itemsPerPage: 5"
+            <tr dir-paginate="item in vm.rideshares | itemsPerPage: vm.pagination.itemsPerPage"
                 current-page="vm.pagination.current">
 
                 <td>

@@ -22,7 +22,11 @@
 
     vm.ready = false;
 
+    vm.tester = 101;
+
+    // Pagination defaults
     vm.pagination = {
+      itemsPerPage: 5,
       current: 1
     };
 
@@ -35,13 +39,17 @@
         .then(
         function (res) {
 
-          vm.pagination = {
-            current: res[1] || 1
-          };
+          // Use local storage current page for pagination or default to page 1.
+          vm.pagination.current = res[1] || 1;
 
-          //vm.rideshares = res[0];
-          //return RidesharesSortLatestSvc.sortRideshares(res[0]).then(function(res) {
-          //return RidesharesWebWorkerSvc.sorter(res[0]).then(function(res) {
+          // If total Rideshares decrease the localstorage current page for pagination may be too great.
+          // This creates a bug where current page will be blank - no rideshares on page 5 for example.
+          // Check that it's not greater than the total number or rideshares, if it is reset to page 1 for pagination
+          if (res[1] && (res[0].length < (vm.pagination.current * vm.pagination.itemsPerPage))) {
+              console.log('reset');
+              vm.pagination.current = 1;
+          }
+
           return RidesharesSortSvc.latest(res[0]).then(function(res) {
             vm.rideshares = res;
           });
