@@ -106,10 +106,18 @@
     </target>
 
     <target name="main" depends="gulp-build">
-        <exec executable="grep">
-            <arg value="version"/>
-            <arg value="package.json"/>
-        </exec>
+        <sequential>
+            <echo message="==> NPM Version"/>
+            <exec executable="grep">
+                <arg value="version"/>
+                <arg value="package.json"/>
+            </exec>
+            <echo message="==> Bower Version"/>
+            <exec executable="grep">
+                <arg value="version"/>
+                <arg value="bower.json"/>
+            </exec>
+        </sequential>
     </target>
 
 </project>
