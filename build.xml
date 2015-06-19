@@ -71,7 +71,7 @@
 
     <!-- Initialize application configs -->
 
-    <target name="copy-config" depends="npm-local">
+    <target name="copy-config" depends="bower">
         <copy todir="config/env" overwrite="true" verbose="true">
             <fileset dir="${config.src}"/>
         </copy>
