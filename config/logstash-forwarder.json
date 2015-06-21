@@ -1,6 +1,6 @@
 {
   "network": {
-    "servers": ["vbox.ridesharemarket.com:9876"],
+    "servers": ["logstash.ridesharemarket.com:9876"],
     "ssl certificate": "/etc/pki/tls/certs/logstash-forwarder/rsm-logstash-forwarder.crt",
     "ssl key": "/etc/pki/tls/private/logstash-forwarder/rsm-logstash-forwarder.key",
     "ssl ca": "/etc/pki/tls/certs/logstash-forwarder/rsm-logstash-forwarder.crt",
