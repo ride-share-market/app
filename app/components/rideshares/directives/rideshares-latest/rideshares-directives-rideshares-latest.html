@@ -13,17 +13,21 @@
 
         <h1>Latest Rideshares</h1>
 
+        <label for="search"><b>Search</b>:</label>
+        <input ng-model="q" id="search" placeholder="Search for a Rideshare">
+        <br/><br/>
+
         <table
                 ng-if="!vm.isSmall()"
-                class="latest mobile-latest">
+                class="rideshare mobile">
             <tbody>
 
-            <tr dir-paginate="item in vm.rideshares | itemsPerPage: vm.pagination.itemsPerPage"
+            <tr dir-paginate="item in vm.rideshares | filter:q | itemsPerPage: vm.pagination.itemsPerPage"
                 current-page="vm.pagination.current">
                 <td>
-                    <a ng-href="#!/rideshares/{{ item._id }}">{{ ::item.origin }}</a><br/>
+                    <a ng-href="#!/rideshares/{{ ::item._id }}">{{ ::item.origin }}</a><br/>
                     to<br/>
-                    <a ng-href="#!/rideshares/{{ item._id }}">{{ ::item.destination }}</a>
+                    <a ng-href="#!/rideshares/{{ ::item._id }}">{{ ::item.destination }}</a>
                 </td>
             </tr>
             </tbody>
@@ -32,7 +36,7 @@
         <table
                 ng-if="vm.isSmall()"
                 style="width: 80%"
-                class="latest">
+                class="rideshare">
 
             <thead>
             <tr>
@@ -44,13 +48,12 @@
             </thead>
 
             <tbody>
-            <tr dir-paginate="item in vm.rideshares | itemsPerPage: vm.pagination.itemsPerPage"
+            <tr dir-paginate="item in vm.rideshares | filter:q | itemsPerPage: vm.pagination.itemsPerPage"
                 current-page="vm.pagination.current">
 
                 <td>
                     <a ng-href="#!/rideshares/{{::item._id}}">
-                        <ng-md-icon style="fill: #4c7bff" icon="forward" size="18"></ng-md-icon>
-                        &nbsp;{{::item.origin}}
+                        {{::item.origin}}
                     </a>
                 </td>
 
@@ -59,11 +62,11 @@
                 </td>
 
                 <td>
-                    {{::item.destination}}
+                    <a ng-href="#!/rideshares/{{ ::item._id }}">{{ ::item.destination }}</a>
                 </td>
 
                 <td nowrap>
-                    {{item.updated_at | date:'yyyy-MM-dd'}}
+                    {{::item.updated_at | date:'yyyy-MM-dd'}}
                 </td>
             </tr>
 

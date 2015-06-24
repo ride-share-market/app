@@ -1,4 +1,34 @@
-.date {
+table.rideshare > thead {
+  text-align: left;
+  font-weight: bold;
+  font-size: larger;
+}
+table.rideshare td {
+  padding-top: 0.4em;
+  padding-bottom: 0.4em;
+}
+table.rideshare tr:nth-child(odd) {
+  background: #f0f8ff;
+}
+table.rideshare tr:nth-child(even) {
+  background: #f5f5f5;
+}
+table.show td:first-child {
+  font-weight: 600;
+  text-align: right;
+  padding-right: 0.8em;
+}
+table.mobile {
+  width: 100%;
+  table-layout: fixed;
+  margin-left: 0.2em;
+  margin-right: 0.2em;
+}
+.itinerary__place-big {
+  font-size: 1.2em;
+  font-weight: 500;
+}
+.itinerary__date {
   font-family: "Times New Roman", Georgia, Serif;
   font-size: 0.9em;
   font-weight: 300;
@@ -18,23 +48,4 @@ label.radiobutton {
 }
 div.element-padding {
   padding: 0.4em 0 0.4em 0;
-}
-table > thead {
-  text-align: left;
-}
-table.mobile-latest {
-  width: 100%;
-  table-layout: fixed;
-  margin-left: 0.2em;
-  margin-right: 0.2em;
-}
-table.mobile-latest td {
-  padding-bottom: 0.4em;
-  padding-bottom: 0.4em;
-}
-table.latest tr:nth-child(odd) {
-  background: #f0f8ff;
-}
-table.latest tr:nth-child(even) {
-  background: #f5f5f5;
 }
