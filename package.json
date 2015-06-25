@@ -1,14 +1,14 @@
 {
   "name": "ride-share-market-app",
-  "version": "1.0.0",
-  "description": "Ride Share Market AngularJS App",
+  "version": "1.0.1",
+  "description": "ridesharemarket.com AngularJS Web App",
   "private": true,
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Run 'gulp help' for task list\" && exit 0"
   },
   "author": "systemsadmin@ridesharemarket.com",
-  "license": "MIT",
+  "license": "GPLv2",
   "dependencies": {
     "koa": "^0.20.0",
     "koa-compress": "^1.0.8",

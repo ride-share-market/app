@@ -1,12 +1,12 @@
 {
   "name": "ride-share-market-app",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "authors": [
     "systemsadmin@ridesharemarket.com"
   ],
-  "description": "Ride Share Market AngularJS App",
+  "description": "ridesharemarket.com AngularJS Web App",
   "main": "server.js",
-  "license": "MIT",
+  "license": "GPLv2",
   "homepage": "ridesharemarket.com",
   "private": true,
   "ignore": [
