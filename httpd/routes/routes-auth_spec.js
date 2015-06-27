@@ -4,13 +4,17 @@ var config = require('../../config/app'),
   http = require('http'),
   request = require('supertest'),
   should = require('chai').should(),
-  router = require('koa-router'),
   koa = require('koa'),
+  router = require('koa-router')(),
   app = koa();
 
-app.use(router(app));
+//routes to test
+require('./routes-auth')(router);
 
-require('./routes-auth')(app);
+//enable routing
+app
+  .use(router.routes())
+  .use(router.allowedMethods());
 
 var server = http.createServer(app.callback());
 

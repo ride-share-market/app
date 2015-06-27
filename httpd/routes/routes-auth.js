@@ -2,16 +2,16 @@
 
 var config = require('../../config/app');
 
-module.exports = function (app) {
+module.exports = function (router) {
 
-  app.get('/signin/google', function *signinGoogle(next) {
-    this.redirect(config.get('oauth').signin.google);
-    yield next;
-  });
-
-  app.get('/signin/facebook', function *signinFacebook(next) {
-    this.redirect(config.get('oauth').signin.facebook);
-    yield next;
-  });
+  router
+    .get('/signin/google', function *signinGoogle(next) {
+      this.redirect(config.get('oauth').signin.google);
+      yield next;
+    })
+    .get('/signin/facebook', function *signinFacebook(next) {
+      this.redirect(config.get('oauth').signin.facebook);
+      yield next;
+    });
 
 };

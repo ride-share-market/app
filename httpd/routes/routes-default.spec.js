@@ -3,8 +3,8 @@
 var http = require('http'),
   request = require('supertest'),
   should = require('chai').should(),
-  router = require('koa-router'),
   koa = require('koa'),
+  router = require('koa-router')(),
   app = koa();
 
 // Templating stub
@@ -13,9 +13,14 @@ app.context.render = function *() {
   this.type = 'html';
   this.body = 'Rendered OK';
 };
-app.use(router(app));
 
-require('./routes-default')(app);
+// routes to test
+require('./routes-default')(router, app);
+
+//enable routing
+app
+  .use(router.routes())
+  .use(router.allowedMethods());
 
 var server = http.createServer(app.callback());
 

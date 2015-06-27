@@ -2,9 +2,9 @@
 
 var env = process.env.NODE_ENV = process.env.NODE_ENV || 'dev';
 
-module.exports = function (app) {
+module.exports = function (router, app) {
 
-  app.get('/', function *home() {
+  router.get('/', function *home() {
 
     //console.log('req', this.request);
     //console.log('query', this.query);

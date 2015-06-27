@@ -4,7 +4,7 @@ var env = process.env.NODE_ENV = process.env.NODE_ENV || 'dev',
   fs = require('fs'),
   helmet = require('koa-helmet'),
   compress = require('koa-compress'),
-  router = require('koa-router'),
+  router = require('koa-router')(),
   render = require('koa-ejs'),
   path = require('path'),
   requireWalk = require('require-walk'),
@@ -45,9 +45,11 @@ module.exports = function (app) {
     yield next;
   });
 
-  app.use(router(app));
-
   // Routes
-  requireWalk(config.get('root') + '/httpd/routes')(app);
+  requireWalk(config.get('root') + '/httpd/routes')(router, app);
+
+  app
+    .use(router.routes())
+    .use(router.allowedMethods());
 
 };
