@@ -46,7 +46,6 @@
           // This creates a bug where current page will be blank - no rideshares on page 5 for example.
           // Check that it's not greater than the total number or rideshares, if it is reset to page 1 for pagination
           if (res[1] && (res[0].length < (vm.pagination.current * vm.pagination.itemsPerPage))) {
-              console.log('reset');
               vm.pagination.current = 1;
           }
 
