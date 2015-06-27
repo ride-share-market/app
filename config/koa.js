@@ -1,6 +1,6 @@
 'use strict';
 
-var env = process.env.NODE_ENV = process.env.NODE_ENV || 'dev',
+var env = process.env.NODE_ENV = process.env.NODE_ENV || 'loc',
   fs = require('fs'),
   helmet = require('koa-helmet'),
   compress = require('koa-compress'),
@@ -23,7 +23,7 @@ module.exports = function (app) {
   app.use(compress());
 
   //var assetsPath;
-  app.use(serve(path.join(__dirname, (env === 'prd') ? './../dist' : './../app')), {
+  app.use(serve(path.join(__dirname, (env === 'loc') ? './../app' : './../dist')), {
     maxAge: 365 * 24 * 60 * 60
   });
 

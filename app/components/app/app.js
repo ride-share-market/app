@@ -31,7 +31,6 @@
         angularyticsEventHandlers.push('GoogleUniversal');
       }
       AngularyticsProvider.setEventHandlers(angularyticsEventHandlers);
-      //AngularyticsProvider.setEventHandlers(['Console', 'GoogleUniversal']);
     }).run(function(Angularytics) {
       Angularytics.init();
     });

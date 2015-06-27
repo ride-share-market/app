@@ -97,6 +97,10 @@ Gulp task runner (WIP)
 - Compile CSS and JS scripts
 - Prepare production index.html
 - `gulp build`
+- Test out the build HTML/CSS/JS, start local server in vbx env:
+- `NODE_ENV=vbx node server.js`
+- Open a browser tab at:
+- `http://localhost:3000`
 
 ## Deployment
 
