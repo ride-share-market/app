@@ -44,7 +44,6 @@
         function (res) {
           vm.rideshare = res[0];
           vm.user = res[1];
-          console.log(vm.rideshare.rideshares[0]);
           if (vm.user && (vm.rideshare.rideshares[0].user._id === vm.user.id)) {
             vm.isOwner = true;
           }
@@ -59,11 +58,6 @@
         });
     }
 
-    vm.update1 = function updateRideshare () {
-      console.log('vm.update');
-      console.log('vm.rideshare', vm.rideshare);
-    };
-
     vm.update = function updateRideshare () {
 
       vm.rideshare.customPUT(vm.rideshare.rideshares[0]).then(
@@ -73,7 +67,7 @@
         function (error) {
 
           // TODO: handle update error response
-          console.log(error);
+          //console.log(error);
 
 //            var validationErrorMessage = {};
 //            if (error.data.message) {
@@ -104,8 +98,8 @@
           $location.path(res.meta.location);
         },
         function (err) {
-          console.log(err);
           //TODO: handle errors in UI
+          //console.log(err);
           //$scope.serverSideErrors.push({ path: 'Error', type: 'Sorry, we are unable to remove this rideshare' });
         }
       );

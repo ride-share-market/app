@@ -44,7 +44,7 @@
         },
         function (err) {
           // TODO: handle errors, will be an array of {code, error, title} objects
-          console.log('createError', err);
+          //console.log('createError', err);
           vm.errors = err;
         }
       );

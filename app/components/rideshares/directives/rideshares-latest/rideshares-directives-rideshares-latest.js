@@ -67,7 +67,6 @@
 
     // This is useful if the user paginates several pages into the data, clicks into, then goes back.
     vm.pageChanged = function(newPageNumber) {
-      console.log(newPageNumber);
       AppLocalStorageSvc.setItem('rsmLatestCurrentPage', newPageNumber);
     };
 

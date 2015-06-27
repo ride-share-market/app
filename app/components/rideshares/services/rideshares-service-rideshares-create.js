@@ -13,8 +13,6 @@
   function createRideshare($q, Restangular) {
     return function(rideshare) {
 
-      console.log('posting: ', rideshare);
-
       var deferred = $q.defer();
 
       Restangular.all('rideshares').post(rideshare).then(
