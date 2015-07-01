@@ -16,7 +16,7 @@
       };
     });
 
-  function RidesharesUpdateCtrl($q, $location, RidesharesGetSvc, JwtSvc) {
+  function RidesharesUpdateCtrl($q, $location, RidesharesGetSvc, JwtSvc, RidesharesServerSideFormErrorsSvc) {
 
     var vm = this;
 
@@ -58,36 +58,21 @@
         });
     }
 
-    vm.update = function updateRideshare () {
+    vm.update = function updateRideshare() {
 
-      vm.rideshare.customPUT(vm.rideshare.rideshares[0]).then(
+      var rideshare = {
+        _id: vm.rideshare.rideshares[0]._id,
+        itinerary: vm.rideshare.rideshares[0].itinerary
+      };
+
+      vm.rideshare.customPUT(rideshare).then(
         function () {
           $location.path('/rideshares/' + vm.rideshare.rideshares[0]._id);
         },
-        function (error) {
-
-          // TODO: handle update error response
-          //console.log(error);
-
-//            var validationErrorMessage = {};
-//            if (error.data.message) {
-//              // auth error, not logged in (nefarious URL tampering to load templates manually)
-//              validationErrorMessage.path = 'Error';
-//              validationErrorMessage.type = error.data.message;
-//              serverSideFormValidationErrors.push(validationErrorMessage);
-//            } else {
-//              // display serverside validation errors
-//              for (var field in error.data) {
-//                validationErrorMessage = {};
-//                validationErrorMessage.path = error.data[field].path;
-//                validationErrorMessage.message = error.data[field].message;
-//                serverSideFormValidationErrors.push(validationErrorMessage);
-//              }
-//            }
-//
-//            // Update scope formErrors
-//            $scope.formValidationErrors = serverSideFormValidationErrors;
-
+        function (err) {
+          err.data.errors.forEach(function (item) {
+            RidesharesServerSideFormErrorsSvc.addItem(item.title);
+          });
         }
       );
     };
@@ -97,10 +82,8 @@
         function (res) {
           $location.path(res.meta.location);
         },
-        function (err) {
-          //TODO: handle errors in UI
-          //console.log(err);
-          //$scope.serverSideErrors.push({ path: 'Error', type: 'Sorry, we are unable to remove this rideshare' });
+        function () {
+          $location.path('/error');
         }
       );
     };

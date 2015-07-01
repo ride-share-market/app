@@ -24,6 +24,7 @@
   "globals": {
     "angular": false,
     "_": true,
+    "R": true,
     "$": true,
     "describe": false,
     "inject": false,

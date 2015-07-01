@@ -9,6 +9,8 @@
         elm,
         isolateScope;
 
+      beforeEach(module('rideshares.services'));
+
       // Load the directives module
       beforeEach(module('rideshares.directives', function ($provide) {
 
@@ -22,10 +24,6 @@
         });
 
         $provide.factory('$mdMedia', function() {
-          return {};
-        });
-
-        $provide.factory('RidesharesRouteUpdateSvc', function() {
           return {};
         });
 

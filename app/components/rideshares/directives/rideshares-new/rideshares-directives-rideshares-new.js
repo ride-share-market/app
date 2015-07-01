@@ -14,7 +14,7 @@
       };
     });
 
-  function RidesharesNewCtrl($location, RidesharesCreateSvc) {
+  function RidesharesNewCtrl($location, RidesharesCreateSvc, RidesharesServerSideFormErrorsSvc) {
 
     var vm = this;
 
@@ -39,16 +39,14 @@
 
       RidesharesCreateSvc.create(vm.rideshare).then(
         function (res) {
-          // locate to view path
           $location.path('/rideshares/' + res._id);
         },
         function (err) {
-          // TODO: handle errors, will be an array of {code, error, title} objects
-          //console.log('createError', err);
-          vm.errors = err;
+          err.forEach(function (item) {
+            RidesharesServerSideFormErrorsSvc.addItem(item.title);
+          });
         }
       );
-
     };
 
   }

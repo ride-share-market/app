@@ -20,7 +20,7 @@
       };
     });
 
-  function RidesharesItineraryCtrl($scope, $mdDialog, $mdMedia, RidesharesRouteUpdateSvc) {
+  function RidesharesItineraryCtrl($scope, $mdDialog, $mdMedia, RidesharesRouteUpdateSvc, RidesharesServerSideFormErrorsSvc) {
 
     var vm = this;
 
@@ -38,6 +38,10 @@
           }
         }
       });
+
+    $scope.$watch(RidesharesServerSideFormErrorsSvc.getItems, function(newVal) {
+      vm.serverSideFormErrors = newVal;
+    }, true);
 
     vm.addPlace = function () {
 
@@ -96,6 +100,8 @@
     vm.isSmall = function() {
       return $mdMedia('gt-sm');
     };
+
+    // TODO: refactor intineray properties
 
     vm.types = ['Wanted', 'Offering'];
     vm.itinerary.type = vm.itinerary.type || vm.types[0]; // wanted

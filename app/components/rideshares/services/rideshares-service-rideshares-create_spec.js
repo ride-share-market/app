@@ -49,10 +49,10 @@
           // test
           $httpBackend.expectPOST('/rideshares').respond(400, fixture400PostRideshare);
 
-          RidesharesCreateSvc.create({}).catch(function createError(err) {
+          RidesharesCreateSvc.create({}).catch(function (err) {
             expect(err).to.be.instanceof(Array);
             expect(err[0].code).to.equal('validation_error');
-            expect(err[0].title).to.equal('Itinerary is required.');
+            expect(err[0].title).to.equal('Itinerary - Additional properties not allowed: color.');
           });
 
           $httpBackend.flush();

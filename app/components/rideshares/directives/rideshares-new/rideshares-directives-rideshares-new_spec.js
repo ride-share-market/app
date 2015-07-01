@@ -8,24 +8,27 @@
       var scope,
         elm,
         $location,
-        isolateScope;
+        isolateScope,
+        RidesharesServerSideFormErrorsSvc;
+
+      beforeEach(module('rideshares.services'));
 
       // Load the directives module
-      beforeEach(module('rideshares.directives', function($provide) {
+      beforeEach(module('rideshares.directives', function ($provide) {
 
         $provide.factory('ngAutocompleteDirective', function () {
           return {};
         });
 
-        $provide.factory('$mdDialog', function() {
+        $provide.factory('$mdDialog', function () {
           return {};
         });
 
-        $provide.factory('$mdMedia', function() {
+        $provide.factory('$mdMedia', function () {
           return {};
         });
 
-        $provide.factory('RidesharesRouteUpdateSvc', function() {
+        $provide.factory('RidesharesRouteUpdateSvc', function () {
           return {};
         });
 
@@ -33,7 +36,7 @@
           return {
             create: function (rideshare) {
               // success response
-              if(rideshare.itinerary.route.length > 1) {
+              if (rideshare.itinerary.route.length > 1) {
                 return {
                   then: function (successCallback) {
                     successCallback({
@@ -46,7 +49,7 @@
               else {
                 return {
                   then: function (successCallback, errorCallback) {
-                    errorCallback('Rideshare Create Errors');
+                    errorCallback([{code: 'validation_error', title: 'Serverside Validation Error'}]);
                   }
                 };
               }
@@ -59,10 +62,11 @@
       // Load the test cached HTML templates
       beforeEach(module('templates'));
 
-      beforeEach(inject(function ($rootScope, $compile,_$location_) {
+      beforeEach(inject(function ($rootScope, $compile, _$location_, _RidesharesServerSideFormErrorsSvc_) {
         scope = $rootScope.$new();
         elm = angular.element('<rsm-rideshares-new/>');
         $location = _$location_;
+        RidesharesServerSideFormErrorsSvc = _RidesharesServerSideFormErrorsSvc_;
         $compile(elm)(scope);
         scope.$apply();
         isolateScope = elm.isolateScope().vm;
@@ -72,8 +76,8 @@
 
         expect($location.path()).to.equal('');
 
-        isolateScope.rideshare.itinerary.route.push({a:1});
-        isolateScope.rideshare.itinerary.route.push({a:2});
+        isolateScope.rideshare.itinerary.route.push({a: 1});
+        isolateScope.rideshare.itinerary.route.push({a: 2});
 
         isolateScope.create();
 
@@ -85,15 +89,15 @@
 
       it('should handle server error response on save error', function (done) {
 
-        expect(isolateScope.errors).to.be.undefined;
-
         expect($location.path()).to.equal('');
+
+        expect(RidesharesServerSideFormErrorsSvc.getItems().length).to.equal(0);
 
         isolateScope.create();
 
-        expect($location.path()).to.equal('');
+        expect(RidesharesServerSideFormErrorsSvc.getItems().length).to.equal(1);
 
-        expect(isolateScope.errors).to.not.be.undefined;
+        expect($location.path()).to.equal('');
 
         done();
 
