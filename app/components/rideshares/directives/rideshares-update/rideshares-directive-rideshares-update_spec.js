@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  describe.only('Rideshares Directive', function () {
+  describe('Rideshares Directive', function () {
 
     describe('Rideshares Update', function () {
 
@@ -135,6 +135,22 @@
           done();
 
         });
+
+      });
+
+      it('should handle delete rideshare errors', function(done) {
+
+        expect($location.path()).to.equal('');
+
+        $httpBackend.expectDELETE('/rideshares/545d8cab03badf4d7d8c89c9').respond(500);
+
+        isolateScope.remove();
+
+        $httpBackend.flush();
+
+        expect($location.path()).to.equal('/error');
+
+        done();
 
       });
 
