@@ -185,14 +185,14 @@
                             ng-model="vm.itinerary.cost"
                             aria-label="cost">
 
-                    <div ng-messages="RidesharesForm.cost.$error">
-                        <p class="error" ng-message="required">! Cost is required, it may be set to 0.</p>
+                    <div id="errorMessages" ng-messages="RidesharesForm.cost.$error">
+                        <p ng-message="required">! Cost is required, it may be set to 0.</p>
 
-                        <p class="error" ng-message="number">! Cost must be a number.</p>
+                        <p ng-message="number">! Cost must be a number.</p>
 
-                        <p class="error" ng-message="max">! Cost must be a number between 0-500,000.</p>
+                        <p ng-message="max">! Cost must be a number between 0-500,000.</p>
 
-                        <p class="error" ng-message="maxlength">! Cost must be a number between 0-500,000.</p>
+                        <p ng-message="maxlength">! Cost must be a number between 0-500,000.</p>
                     </div>
                 </div>
 
@@ -303,7 +303,7 @@
 
                 <i>Comment length characters available: <b>{{250 - RidesharesForm.comment.$viewValue.length}}</b></i>
 
-                <div ng-messages="RidesharesForm.comment.$error">
+                <div id="errorMessages" ng-messages="RidesharesForm.comment.$error">
                     <p class="error" ng-message="maxlength">! Maximum Comment length is 250 characters.</p>
                 </div>
             </fieldset>
