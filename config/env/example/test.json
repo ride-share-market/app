@@ -1,7 +1,7 @@
 {
   "app": {
     "protocol": "http://",
-    "hostname": "local1.ridesharemarket.com",
+    "hostname": "local.ridesharemarket.com",
     "port": "3000"
   },
   "oauth": {

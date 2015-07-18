@@ -1,0 +1,13 @@
+{
+  "app": {
+    "protocol": "https://",
+    "hostname": "ridesharemarket.com",
+    "api": "https://api.ridesharemarket.com"
+  },
+  "oauth": {
+    "signin": {
+      "google": "https://api.ridesharemarket.com/signin/google",
+      "facebook": "https://api.ridesharemarket.com/signin/facebook"
+    }
+  }
+}
