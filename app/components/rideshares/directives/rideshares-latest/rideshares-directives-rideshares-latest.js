@@ -42,10 +42,13 @@
           // Use local storage current page for pagination or default to page 1.
           vm.pagination.current = res[1] || 1;
 
-          // If total Rideshares decrease the localstorage current page for pagination may be too great.
-          // This creates a bug where current page will be blank - no rideshares on page 5 for example.
-          // Check that it's not greater than the total number or rideshares, if it is reset to page 1 for pagination
-          if (res[1] && (res[0].length < (vm.pagination.current * vm.pagination.itemsPerPage))) {
+          /*
+           If localstorage returns pagination page
+           and the pagination page is greater than 1
+           and there are less items a for a complete paginated page
+           reset to page 1
+          */
+          if (res[1] && res[1] > 1 && res[0].length < vm.pagination.itemsPerPage) {
               vm.pagination.current = 1;
           }
 
