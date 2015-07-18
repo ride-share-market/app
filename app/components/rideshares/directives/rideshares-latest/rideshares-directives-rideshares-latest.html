@@ -17,21 +17,21 @@
         <input ng-model="q" id="search" placeholder="Search for a Rideshare">
         <br/><br/>
 
-        <table
-                ng-if="!vm.isSmall()"
-                class="rideshare mobile">
-            <tbody>
-
-            <tr dir-paginate="item in vm.rideshares | filter:q | itemsPerPage: vm.pagination.itemsPerPage"
-                current-page="vm.pagination.current">
-                <td>
-                    <a ng-href="#!/rideshares/{{ ::item._id }}">{{ ::item.origin }}</a><br/>
-                    to<br/>
-                    <a ng-href="#!/rideshares/{{ ::item._id }}">{{ ::item.destination }}</a>
-                </td>
-            </tr>
-            </tbody>
-        </table>
+        <md-content ng-if="!vm.isSmall()">
+            <md-list>
+                <!--<md-subheader class="md-no-sticky">3 line item</md-subheader>-->
+                <md-list-item
+                        class="md-3-line"
+                        dir-paginate="item in vm.rideshares | filter:q | itemsPerPage: vm.pagination.itemsPerPage"
+                        current-page="vm.pagination.current">
+                    <div class="md-list-item-text">
+                        <a ng-href="#!/rideshares/{{ ::item._id }}">{{ ::item.origin }}</a><br/>
+                        <i>to</i><br/>
+                        <a ng-href="#!/rideshares/{{ ::item._id }}">{{ ::item.destination }}</a>
+                    </div>
+                </md-list-item>
+            </md-list>
+        </md-content>
 
         <table
                 ng-if="vm.isSmall()"
