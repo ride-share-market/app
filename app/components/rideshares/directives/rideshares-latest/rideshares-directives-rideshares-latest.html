@@ -73,10 +73,12 @@
             </tbody>
         </table>
 
+        <div style="display: flex; justify-content: center">
+            <div>
+                <dir-pagination-controls on-page-change="vm.pageChanged(newPageNumber)"></dir-pagination-controls>
+            </div>
+        </div>
+
     </div>
 
-</div>
-
-<div flex="95" flex-md="80" flex-gt-md="70" layout="row" layout-align="center">
-    <dir-pagination-controls on-page-change="vm.pageChanged(newPageNumber)"></dir-pagination-controls>
 </div>
