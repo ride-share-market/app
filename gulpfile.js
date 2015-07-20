@@ -208,7 +208,7 @@
 
     return gulp.src('httpd/views/index.prd.html')
       .pipe(cdnify({
-        base: 'https://cdn.ridesharemarket.com/'
+        base: 'https://rsm-154707.c.cdn77.org/'
       }))
       .pipe(gulp.dest('httpd/views'));
 
