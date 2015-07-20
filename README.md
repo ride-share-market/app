@@ -1,11 +1,13 @@
-# ride-share-market-app
+# Ride Share Market - AngularJS App
 
-Ride Share Market AngularJS App
+[Ride Share Market](https://ridesharemarket.com) - Free, accessible and open source Ride Sharing.
+
+This git repository is the AngularJS App for [ridesharemarket.com](https://ridesharemarket.com).
 
 ## Install
 
-- `git clone git@github.com:rudijs/ride-share-market-app.git`
-- `cd ride-share-market-app && git checkout develop`
+- `git clone https://github.com/ride-share-market/app.git`
+- `cd app && git checkout develop`
 - `npm install -g bower bower-update gulp`
 - `npm install`
 - `bower install`
@@ -120,22 +122,14 @@ Gulp task runner (WIP)
 
 Development Docker builds:
 
-- `sudo docker build -t rudijs/rsm-app:x.x.x .`
+- `sudo docker build -t ride-share-market/rsm-app:x.x.x .`
 - Run the container locally for testing.
 - Interactive with login.
-- `sudo docker run -i --name rsm-app -p 3000:3000 -t rudijs/rsm-app:x.x.x /bin/bash`
+- `sudo docker run -i --name rsm-app -p 3000:3000 -t ride-share-market/rsm-app:x.x.x /bin/bash`
 - Daemon mode.
-- `sudo docker run -d --name rsm-app -p 3000:3000 -t rudijs/rsm-app:x.x.x`
+- `sudo docker run -d --name rsm-app -p 3000:3000 -t ride-share-market/rsm-app:x.x.x`
 
 Production builds:
 
 - Docker build, tag and push to local private repository.
 - `./docker-build x.x.x`
-
-## Mobile Testing
- 
-In the loc environment use a tool like airdoid.com to send a URL and open a page on Android Chrome.
-
-- Ex: Use and IP address for local mobile devices
-- `http://192.168.0.102:3000/#!/welcome?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiVGVzdCIsImlhdCI6MTQwOTg4NzM0MH0.90p7HsF59e8qds4F-YQfckMKfy_cA5bcnub6EmZEAQw`
-- `http://local.ridesharemarket.com:3000/#!/welcome?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiVGVzdCIsImlhdCI6MTQwOTg4NzM0MH0.90p7HsF59e8qds4F-YQfckMKfy_cA5bcnub6EmZEAQw`
