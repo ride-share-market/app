@@ -38,4 +38,42 @@ describe('Auth Routes', function () {
 
   });
 
+  describe('GET /signin/facebook', function () {
+
+    it('should return 302', function (done) {
+      request(server)
+        .get('/signin/facebook')
+        .expect(302)
+        .end(function (err, res) {
+          if (err) {
+            return done(err);
+          }
+          should.exist(res.headers.location);
+          res.headers.location.should.equal(config.get('oauth').signin.facebook);
+          done();
+        });
+    });
+
+  });
+
+  describe('GET /signin/linkedin', function () {
+
+    it('should return 302', function (done) {
+      request(server)
+        .get('/signin/linkedin')
+        .expect(302)
+        .end(function (err, res) {
+          if (err) {
+            return done(err);
+          }
+          should.exist(res.headers.location);
+          res.headers.location.should.equal(config.get('oauth').signin.linkedin);
+          done();
+        });
+    });
+
+  });
+
+
+
 });

@@ -7,7 +7,8 @@
   "oauth": {
     "signin": {
       "google": "http://api.dev.loc.ridesharemarket.com:3001/signin/google",
-      "facebook": "http://api.dev.loc.ridesharemarket.com:3001/signin/facebook"
+      "facebook": "http://api.dev.loc.ridesharemarket.com:3001/signin/facebook",
+      "linkedin": "http://api.dev.loc.ridesharemarket.com:3001/signin/linkedin"
     }
   },
   "e2e": {

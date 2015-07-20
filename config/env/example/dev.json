@@ -7,7 +7,8 @@
   "oauth": {
     "signin": {
       "google": "https://api.dev.ams.ridesharemarket.com/signin/google",
-      "facebook": "https://api.dev.ams.ridesharemarket.com/signin/facebook"
+      "facebook": "https://api.dev.ams.ridesharemarket.com/signin/facebook",
+      "linkedin": "https://api.dev.ams.ridesharemarket.com/signin/linkedin"
     }
   }
 }

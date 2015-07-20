@@ -12,6 +12,10 @@ module.exports = function (router) {
     .get('/signin/facebook', function *signinFacebook(next) {
       this.redirect(config.get('oauth').signin.facebook);
       yield next;
+    })
+    .get('/signin/linkedin', function *signinLinkedin(next) {
+      this.redirect(config.get('oauth').signin.linkedin);
+      yield next;
     });
 
 };
