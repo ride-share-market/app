@@ -148,6 +148,10 @@
     del(['dist/'], cb);
   });
 
+  gulp.task('build-clean-templatecache', function (cb) {
+    del(['app/template-cache/'], cb);
+  });
+
   gulp.task('build-templatecache', function () {
     gulp.src([
       'app/**/*.html',
@@ -232,6 +236,7 @@
   gulp.task('build', function (callback) {
     runSequence(
       'build-clean',
+      'build-clean-templatecache',
       'build-templatecache',
       'build-scripts-styles',
       // build in parallel
@@ -253,8 +258,6 @@
       callback
     );
   });
-
-
 
   var args = require('yargs').argv;
   var browserSync = require('browser-sync');
