@@ -98,7 +98,16 @@
         </exec>
     </target>
 
-    <target name="gulp-build" depends="gulp-lint">
+    <!-- Run an extra build-templatecache -->
+    <!-- TODO: find out why extra build-templatecache is needed, build-templatecache in build doesn't work first time. -->
+    <target name="gulp-build-templatecache" depends="gulp-lint">
+        <exec executable="${node.path}/gulp" failonerror="true">
+            <env key="PATH" path="${node.path}:${env.PATH}"/>
+            <arg value="build-templatecache"/>
+        </exec>
+    </target>
+
+    <target name="gulp-build" depends="gulp-build-templatecache">
         <exec executable="${node.path}/gulp" failonerror="true">
             <env key="PATH" path="${node.path}:${env.PATH}"/>
             <arg value="build"/>
