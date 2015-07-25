@@ -140,7 +140,7 @@
                             id="type"
                             name="type"
                             ng-model="vm.itinerary.type"
-                            ng-options="o as o for o in vm.types"></select>
+                            ng-options="o as o for o in vm.io.types"></select>
                     <!--<md-select
                                     name="type"
                                     ng-model="vm.itinerary.type">
@@ -154,7 +154,7 @@
                             id="trip"
                             name="trip"
                             ng-model="vm.itinerary.trip"
-                            ng-options="o as o for o in vm.trips"></select>
+                            ng-options="o as o for o in vm.io.trips"></select>
                 </div>
 
                 <div forminput>
@@ -163,7 +163,7 @@
                             id="frequency"
                             name="frequency"
                             ng-model="vm.itinerary.frequency"
-                            ng-options="o as o for o in vm.frequencies"></select>
+                            ng-options="o as o for o in vm.io.frequencies"></select>
                 </div>
 
                 <div forminput>
@@ -172,7 +172,7 @@
                             id="currency"
                             name="currency"
                             ng-model="vm.itinerary.currency"
-                            ng-options="o as o for o in vm.currencies"></select>
+                            ng-options="o as o for o in vm.io.currencies"></select>
                     &nbsp;
                     <input
                             type="number"
@@ -214,7 +214,7 @@
                             id="vehicle"
                             name="vehicle"
                             ng-model="vm.itinerary.vehicle"
-                            ng-options="o as o for o in vm.vehicleTypes"></select>
+                            ng-options="o as o for o in vm.io.vehicleTypes"></select>
                 </div>
 
                 <div forminput>
@@ -223,7 +223,7 @@
                             id="seats"
                             name="seats"
                             ng-model="vm.itinerary.seats"
-                            ng-options="o as o for o in vm.seats"></select>
+                            ng-options="o as o for o in vm.io.seats"></select>
                 </div>
 
                 <!--<span style="font-weight: bold">Available Seats</span>:&nbsp;
@@ -239,12 +239,12 @@
                             id="luggage"
                             name="luggage"
                             ng-model="vm.itinerary.luggage"
-                            ng-options="o as o for o in vm.luggage"></select>
+                            ng-options="o as o for o in vm.io.luggage"></select>
                 </div>
 
                 <div forminput>
                     <label>Share Driving</label>
-                    <span ng-repeat="option in vm.shareDriving">
+                    <span ng-repeat="option in vm.io.shareDriving">
                         <input
                                 type="radio"
                                 id="shareDriving_{{ $index }}"
@@ -257,7 +257,7 @@
 
                 <div forminput>
                     <label>Smoking</label>
-                    <span ng-repeat="option in vm.smoking">
+                    <span ng-repeat="option in vm.io.smoking">
                         <input
                                 type="radio"
                                 id="smoking_{{ $index }}"

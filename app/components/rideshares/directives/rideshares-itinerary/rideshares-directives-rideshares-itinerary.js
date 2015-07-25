@@ -20,9 +20,16 @@
       };
     });
 
-  function RidesharesItineraryCtrl($scope, $mdDialog, $mdMedia, RidesharesRouteUpdateSvc, RidesharesServerSideFormErrorsSvc) {
+  function RidesharesItineraryCtrl($scope, $mdDialog, $mdMedia,
+                                   RidesharesRouteUpdateSvc,
+                                   RidesharesServerSideFormErrorsSvc,
+                                   RidesharesItinerarySvc) {
 
     var vm = this;
+
+    vm.itinerary = RidesharesItinerarySvc.itinerary(vm.itinerary);
+
+    vm.io = RidesharesItinerarySvc.itineraryOptions;
 
     // We want to only use the exact input value from a google place lookup
     // If the user alters the google place (vm.place) selection in the UI place form input
@@ -39,7 +46,7 @@
         }
       });
 
-    $scope.$watch(RidesharesServerSideFormErrorsSvc.getItems, function(newVal) {
+    $scope.$watch(RidesharesServerSideFormErrorsSvc.getItems, function (newVal) {
       vm.serverSideFormErrors = newVal;
     }, true);
 
@@ -81,7 +88,7 @@
       vm.onSave();
     };
 
-    vm.confirmRemove = function(ev) {
+    vm.confirmRemove = function (ev) {
       // Appending dialog to document.body to cover sidenav in docs app
       var confirm = $mdDialog.confirm()
         // TODO: .parent throwing error?
@@ -92,85 +99,15 @@
         .ok('Yes, please remove.')
         .cancel('No.')
         .targetEvent(ev);
-      $mdDialog.show(confirm).then(function() {
+      $mdDialog.show(confirm).then(function () {
         vm.onRemove();
       });
     };
 
-    vm.isSmall = function() {
+    vm.isSmall = function () {
       return $mdMedia('gt-sm');
     };
 
-    // TODO: refactor intineray properties
-
-    vm.types = ['Wanted', 'Offering'];
-    vm.itinerary.type = vm.itinerary.type || vm.types[0]; // wanted
-
-    vm.trips = ['One-way', 'Round trip'];
-    vm.itinerary.trip = vm.itinerary.trip || vm.trips[0]; // One-way
-
-    vm.frequencies = [
-      'One time',
-      'Daily',
-      'Weekly',
-      'Occasional',
-      'Regular',
-      'Often'
-    ];
-    vm.itinerary.frequency = vm.itinerary.frequency || vm.frequencies[0]; // One Time
-
-    vm.vehicleTypes = [
-      'Car',
-      'Taxi',
-      'Van',
-      'Truck',
-      'Motorcycle'
-    ];
-    vm.itinerary.vehicle = vm.itinerary.vehicle || vm.vehicleTypes[0]; // Car
-
-    vm.seats = [1,2,3,4,5,6,7,8,9,10];
-    vm.itinerary.seats = vm.itinerary.seats || vm.seats[0]; // 1
-
-    vm.luggage = [
-      'None',
-      'Small Amount',
-      'Backpack',
-      'Suitcase',
-      'Sports Equipment',
-      'Larger'
-    ];
-    vm.itinerary.luggage = vm.itinerary.luggage || vm.luggage[1]; // Small Amount
-
-    vm.shareDriving = [ 'Yes', 'No'];
-    vm.itinerary.shareDriving = vm.itinerary.shareDriving || vm.shareDriving[1]; // No
-
-    vm.smoking = [ 'Yes', 'No'];
-    vm.itinerary.smoking = vm.itinerary.smoking || vm.smoking[1]; // No
-    // angular material design
-    //vm.smoking = [
-    //  {label: 'Yes', value: 'Yes'},
-    //  {label: 'No', value: 'No'}
-    //];
-    //vm.itinerary.smoking = vm.itinerary.smoking || vm.smoking[1].value; // No
-
-    // Browser Locale
-    // IE
-    if (navigator.browserLanguage) {
-      vm.lang = navigator.browserLanguage;
-    }
-    // All other vendors
-    else if (navigator.language) {
-      vm.lang = navigator.language;
-    }
-
-    vm.currencies = [ '$', '€', '£', '¥', '₱', '฿', 'Rp', '₩', 'RM', '₹', '₨'];
-    vm.itinerary.currency = vm.itinerary.currency || vm.currencies[0]; // $
-
-    vm.itinerary.cost = vm.itinerary.cost || 0;
-
-    vm.itinerary.comment = vm.itinerary.comment || '';
-
   }
-
 
 })(angular.module('rideshares.directives'));
