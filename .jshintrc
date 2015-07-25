@@ -37,7 +37,7 @@
     "by": false,
     "browser": true,
     "spyOn": true,
-    "jasmine": true,
+    "should": true,
     "google": true,
     "sinon": true,
     "runs": true,
