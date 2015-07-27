@@ -14,7 +14,7 @@
       };
     });
 
-  function RidesharesNewCtrl($location, RidesharesCreateSvc, RidesharesServerSideFormErrorsSvc) {
+  function RidesharesNewCtrl($location, RidesharesItinerarySvc, RidesharesCreateSvc, RidesharesServerSideFormErrorsSvc) {
 
     var vm = this;
 
@@ -22,9 +22,7 @@
     vm.ready = true;
 
     vm.rideshare = {
-      itinerary: {
-        route: []
-      }
+      itinerary: RidesharesItinerarySvc.itinerary()
     };
 
     vm.isRouteValid = true;

@@ -40,7 +40,12 @@
 
     function setup(itineraryOptions, itinerary) {
 
-      itinerary.type = itinerary.type || itineraryOptions.types[0]; // wanted
+      if(!itinerary) {
+        itinerary = {};
+      }
+
+      itinerary.route = itinerary.route || []; // Empty route
+      itinerary.type = itinerary.type || itineraryOptions.types[0]; // Wanted
       itinerary.trip = itinerary.trip || itineraryOptions.trips[0]; // One-way
       itinerary.frequency = itinerary.frequency || itineraryOptions.frequencies[0]; // One Time
       itinerary.vehicle = itinerary.vehicle || itineraryOptions.vehicleTypes[0]; // Car

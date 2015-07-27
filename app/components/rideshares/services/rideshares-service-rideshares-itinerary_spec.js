@@ -17,14 +17,12 @@
 
       describe('New Itinerary', function() {
 
-        var newItinerary = {
-            route: []
-        };
-
         it('should add default properties', function () {
 
-          var itinerary = RidesharesItinerarySvc.itinerary(newItinerary);
+          var itinerary = RidesharesItinerarySvc.itinerary();
 
+          itinerary.route.should.be.an.instanceof(Array);
+          itinerary.route.length.should.equal(0);
           itinerary.type.should.equal('Wanted');
           itinerary.trip.should.equal('One-way');
           itinerary.frequency.should.equal('One time');
@@ -62,6 +60,7 @@
 
           var itinerary = RidesharesItinerarySvc.itinerary(existingItinerary);
 
+          itinerary.route.should.equal(existingItinerary.route);
           itinerary.type.should.equal(existingItinerary.type);
           itinerary.trip.should.equal(existingItinerary.trip);
           itinerary.frequency.should.equal(existingItinerary.frequency);
