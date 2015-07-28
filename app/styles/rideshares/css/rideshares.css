@@ -59,3 +59,9 @@ div.element-padding {
   -webkit-animation-duration: 0.75s;
           animation-duration: 0.75s;
 }
+a.viewMap {
+  cursor: pointer;
+  border: solid 1px #008000;
+  padding: 5px;
+  font-weight: bold;
+}

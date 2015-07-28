@@ -20,7 +20,7 @@
       };
     });
 
-  function RidesharesItineraryCtrl($scope, $mdDialog, $mdMedia,
+  function RidesharesItineraryCtrl($scope, $mdDialog, $mdMedia, $location, $anchorScroll,
                                    RidesharesRouteUpdateSvc,
                                    RidesharesServerSideFormErrorsSvc,
                                    RidesharesItinerarySvc) {
@@ -104,8 +104,22 @@
       });
     };
 
+    // TODO: move to service
     vm.isSmall = function () {
       return $mdMedia('gt-sm');
+    };
+
+    // TODO: move to service
+    vm.goToPageHash = function(hash) {
+      // set the location.hash to the id of
+      // the element you wish to scroll to.
+      $location.hash(hash);
+
+      // call $anchorScroll()
+      $anchorScroll();
+
+      // remove url hash
+      $location.hash('');
     };
 
   }

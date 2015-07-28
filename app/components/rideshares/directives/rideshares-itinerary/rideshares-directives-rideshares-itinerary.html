@@ -13,6 +13,32 @@
                 &nbsp;Waypoints
             </legend>
 
+            <p ng-if="!vm.itinerary.route.length" style="color: #0000cc">
+                <b>Step 1:</b>
+                <br/><br/>
+                First please type the origin location.
+                <br/><br/>
+                <i>
+                    <small>- Select from the Google autocomplete</small>
+                </i>
+            </p>
+
+            <p ng-if="vm.itinerary.route.length === 1" style="color: #0000cc">
+                <b>Step 2:</b>
+                <br/><br/>
+                Enter the next waypoint or destination...
+            </p>
+
+            <p ng-if="vm.itinerary.route.length > 1" style="color: #0000cc">
+                <b>Step 3:</b>
+                <br/><br/>
+                Enter more waypoints if needed.
+                <br/><br/>
+                <i>
+                    <small>- Use the green arrows icon to move down in position</small>
+                </i>
+            </p>
+
             <input
                     name="place"
                     id="place"
@@ -118,6 +144,12 @@
                 </div>
 
 
+            </div>
+
+            <div ng-if="vm.itinerary.route.length > 1">
+                <a
+                        ng-click="vm.goToPageHash('bottom')"
+                        class="viewMap">View Map</a>
             </div>
 
         </fieldset>
@@ -353,5 +385,17 @@
             <rsm-rideshares-map
                     route="vm.itinerary.route"></rsm-rideshares-map>
         </div>
+    </div>
+    <div style="display: flex; justify-content: center">
+        <a ng-click="vm.goToPageHash('top')" style="cursor: pointer">
+            <img
+                    src="/images/icons/back_to_top.svg"
+                    height="50"
+                    alt="Back to Top of Page"/>
+        </a>
+        <a ng-click="vm.goToPageHash('top')" style="cursor: pointer">
+            <p style="text-decoration: underline">Back to Top of Page</p>
+        </a>
+        <a id="bottom"></a>
     </div>
 </div>
