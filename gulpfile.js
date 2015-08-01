@@ -129,7 +129,7 @@
    * Run selected node.js tests
    * gulp test --suite httpd/routes/routes-default.spec.js
   */
-  gulp.task('test', function (cb) {
+  gulp.task('test', function () {
 
     var tests = 'httpd/**/*.js';
 
@@ -153,7 +153,7 @@
 
   });
 
-  gulp.task('test-ci', function (cb) {
+  gulp.task('test-ci', function () {
 
     var cmd = [
       './node_modules/mocha/bin/mocha',
@@ -221,7 +221,7 @@
       .pipe(gulp.dest('dist'));
   });
 
-  gulp.task('build-index', function (cb) {
+  gulp.task('build-index', function () {
     return execSync('mv ./dist/index.dev.html ./httpd/views/index.prd.html', {stdio: [0, 1, 2]});
   });
 
