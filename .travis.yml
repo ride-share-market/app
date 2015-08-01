@@ -3,10 +3,11 @@ node_js:
   - 'iojs-v1.5.1'
 env:
   - NODE_ENV=test
-script:
+before_script:
   - npm install -g bower
   - bower install
   - gulp init
+script:
   - gulp lint
   - gulp test
   - gulp karma-single-run
