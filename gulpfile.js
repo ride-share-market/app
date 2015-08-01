@@ -110,7 +110,7 @@
   });
 
   gulp.task('karma', function () {
-    execSync('./node_modules/karma/bin/karma start config/karma.conf.js', {stdio: [0, 1, 2]});
+    return execSync('./node_modules/karma/bin/karma start config/karma.conf.js', {stdio: [0, 1, 2]});
   });
 
   gulp.task('karma-ci', function () {
@@ -119,7 +119,7 @@
       '--reporters dots',
       '--single-run'
     ].join(' ');
-    execSync(cmd, {stdio: [0, 1, 2]});
+    return execSync(cmd, {stdio: [0, 1, 2]});
   });
 
   /*
@@ -149,7 +149,7 @@
       tests
     ].join(' ');
 
-    execSync(cmd, {stdio: [0, 1, 2]});
+    return execSync(cmd, {stdio: [0, 1, 2]});
 
   });
 
@@ -158,10 +158,10 @@
     var cmd = [
       './node_modules/mocha/bin/mocha',
       '--reporter dot',
-      'httpd/**/*spec.js',
+      'httpd/**/*spec.js'
     ].join(' ');
 
-    execSync(cmd, {stdio: [0, 1, 2]});
+    return execSync(cmd, {stdio: [0, 1, 2]});
 
   });
 
@@ -222,11 +222,7 @@
   });
 
   gulp.task('build-index', function (cb) {
-    return exec('mv ./dist/index.dev.html ./httpd/views/index.prd.html', function (err, stdout, stderr) {
-      console.log(stdout);
-      console.log(stderr);
-      return cb(err);
-    });
+    return execSync('mv ./dist/index.dev.html ./httpd/views/index.prd.html', {stdio: [0, 1, 2]});
   });
 
   gulp.task('cdnify-index', function () {
