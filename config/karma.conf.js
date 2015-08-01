@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function(config) {
+module.exports = function (config) {
   config.set({
 
     basePath: '../',
@@ -136,6 +136,6 @@ module.exports = function(config) {
     // if true, it capture browsers, run tests and exit
     singleRun: false
 
-  })
+  });
 
 };

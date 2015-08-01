@@ -1,5 +1,7 @@
 # Ride Share Market - AngularJS App
 
+[![Build Status](https://travis-ci.org/ride-share-market/app.svg?branch=develop)](https://travis-ci.org/ride-share-market/app) : develop
+
 [Ride Share Market](https://ridesharemarket.com) - Free, accessible and open source Ride Sharing.
 
 This git repository is the AngularJS App for [ridesharemarket.com](https://ridesharemarket.com).
