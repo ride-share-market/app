@@ -4,7 +4,7 @@ node_js:
 env:
   - NODE_ENV=test
 before_script:
-  - npm install -g bower
+  - npm install -g gulp bower
   - bower install
   - gulp init
 script:
