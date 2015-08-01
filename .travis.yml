@@ -9,5 +9,5 @@ before_script:
   - gulp init
 script:
   - gulp lint-ci
-  - gulp test
-  - gulp karma-single-run
+  - gulp test-ci
+  - gulp karma-ci

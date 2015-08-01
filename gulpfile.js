@@ -10,7 +10,6 @@
     nodemon = require('gulp-nodemon'),
     livereload = require('gulp-livereload'),
   // build
-    exec = require('child_process').exec,
     execSync = require('child_process').execSync,
     del = require('del'),
     templateCache = require('gulp-angular-templatecache'),
@@ -92,7 +91,6 @@
       .pipe(jshint.reporter('fail'));
   });
 
-
   gulp.task('stylus', function () {
 
     var stylus = require('gulp-stylus'),
@@ -111,34 +109,60 @@
       });
   });
 
-  gulp.task('karma-single-run', function () {
+  gulp.task('karma', function () {
+    execSync('./node_modules/karma/bin/karma start config/karma.conf.js', {stdio: [0, 1, 2]});
+  });
+
+  gulp.task('karma-ci', function () {
     var cmd = [
       './node_modules/karma/bin/karma start config/karma.conf.js',
       '--reporters dots',
       '--single-run'
     ].join(' ');
-    execSync(cmd, {stdio:[0,1,2]});
+    execSync(cmd, {stdio: [0, 1, 2]});
   });
 
-  gulp.task('karma', function () {
-    execSync('./node_modules/karma/bin/karma start config/karma.conf.js', {stdio:[0,1,2]});
-  });
-
+  /*
+   * Run all node.js tests:
+   * gulp test
+   *
+   * Run selected node.js tests
+   * gulp test --suite httpd/routes/routes-default.spec.js
+  */
   gulp.task('test', function (cb) {
 
-    var tests = '\'httpd/**/*.js\'';
+    var tests = 'httpd/**/*.js';
 
-    // TODO: use command line options library here.
     if (process.argv[3] === '--suite' && process.argv[4]) {
       tests = process.argv[4];
     }
 
-    exec('NODE_ENV=test node --harmony ./node_modules/istanbul-harmony/lib/cli.js cover node_modules/mocha/bin/_mocha ' +
-      '-x \'*spec.js\' --root httpd/ --dir test/coverage  -- -R spec ' + tests, function (err, stdout, stderr) {
-      console.log(stdout);
-      console.log(stderr);
-      cb(err);
-    });
+    var cmd = [
+      'NODE_ENV=test',
+      'node --harmony ./node_modules/istanbul-harmony/lib/cli.js',
+      'cover node_modules/mocha/bin/_mocha',
+      '-x \'*spec.js\'',
+      '--root httpd/',
+      '--dir test/coverage',
+      '-- ',
+      '-R spec',
+      tests
+    ].join(' ');
+
+    execSync(cmd, {stdio: [0, 1, 2]});
+
+  });
+
+  gulp.task('test-ci', function (cb) {
+
+    var cmd = [
+      './node_modules/mocha/bin/mocha',
+      '--reporter dot',
+      'httpd/**/*spec.js',
+    ].join(' ');
+
+    execSync(cmd, {stdio: [0, 1, 2]});
+
   });
 
   gulp.task('build-clean', function (cb) {
@@ -214,21 +238,6 @@
       .pipe(gulp.dest('httpd/views'));
 
   });
-
-  /*  gulp.task('build-css', function () {
-   return gulp.src('./app/css*/
-  /*')
-   .pipe(gulp.dest('./dist/css'));
-   });*/
-
-  /*  gulp.task('build-js', function () {
-   gulp.src('./app/bower_components/modernizr/feature-detects*/
-  /*.js')
-   .pipe(gulp.dest('./dist/bower_components/modernizr/feature-detects'));
-
-   return gulp.src('./app/bower_components/modernizr/modernizr.js')
-   .pipe(gulp.dest('./dist/bower_components/modernizr'));
-   });*/
 
   gulp.task('build', function (callback) {
     runSequence(
