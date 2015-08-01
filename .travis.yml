@@ -6,6 +6,7 @@ env:
 script:
   - npm install -g bower
   - bower install
+  - gulp init
   - gulp lint
   - gulp test
   - gulp karma-single-run
