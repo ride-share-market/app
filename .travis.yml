@@ -4,6 +4,7 @@ node_js:
 env:
   - NODE_ENV=test
 script:
+  - bower install
   - gulp lint
   - gulp test
   - gulp karma-single-run
