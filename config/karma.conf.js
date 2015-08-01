@@ -1,10 +1,9 @@
 'use strict';
 
-module.exports = function () {
+module.exports = function(config) {
+  config.set({
 
-  return {
-    // base path, that will be used to resolve files and exclude
-    basePath: './',
+    basePath: '../',
 
     frameworks: [
       'mocha',
@@ -115,7 +114,7 @@ module.exports = function () {
 
     // level of logging
     // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
-    logLevel: 'LOG_INFO',
+    logLevel: config.LOG_ERROR,
 
     // enable / disable watching file and executing tests whenever any file changes
     autoWatch: true,
@@ -137,6 +136,6 @@ module.exports = function () {
     // if true, it capture browsers, run tests and exit
     singleRun: false
 
-  };
+  })
 
 };

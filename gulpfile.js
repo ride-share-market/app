@@ -11,6 +11,7 @@
     livereload = require('gulp-livereload'),
   // build
     exec = require('child_process').exec,
+    execSync = require('child_process').execSync,
     del = require('del'),
     templateCache = require('gulp-angular-templatecache'),
     minifyHTML = require('gulp-minify-html'),
@@ -103,28 +104,16 @@
   });
 
   gulp.task('karma-single-run', function () {
-    var conf = require('./config/karma.conf.js')();
-    ////conf.browsers = ['Firefox', 'Chrome'];
-    conf.singleRun = true;
-
-    var server = require('karma').server;
-    return server.start(conf, function (exitCode) {
-      console.log('Karma has exited with ' + exitCode);
-      process.exit(exitCode);
-    });
-
+    var cmd = [
+      './node_modules/karma/bin/karma start config/karma.conf.js',
+      '--reporters dots',
+      '--single-run'
+    ].join(' ');
+    execSync(cmd, {stdio:[0,1,2]});
   });
 
   gulp.task('karma', function () {
-    var conf = require('./config/karma.conf.js')();
-    ////conf.browsers = ['Firefox', 'Chrome'];
-
-    var server = require('karma').server;
-    return server.start(conf, function (exitCode) {
-      console.log('Karma has exited with ' + exitCode);
-      process.exit(exitCode);
-    });
-
+    execSync('./node_modules/karma/bin/karma start config/karma.conf.js', {stdio:[0,1,2]});
   });
 
   gulp.task('test', function (cb) {
