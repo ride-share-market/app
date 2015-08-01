@@ -85,6 +85,14 @@
       .pipe(jshint.reporter()); // Console output
   });
 
+  gulp.task('lint-ci', function () {
+    gulp.src(jsLintFiles)
+      .pipe(jshint('.jshintrc', {fail: true}))
+      .pipe(jshint.reporter()) // Console output
+      .pipe(jshint.reporter('fail'));
+  });
+
+
   gulp.task('stylus', function () {
 
     var stylus = require('gulp-stylus'),

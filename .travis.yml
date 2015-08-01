@@ -8,6 +8,6 @@ before_script:
   - bower install
   - gulp init
 script:
-  - gulp lint
+  - gulp lint-ci
   - gulp test
   - gulp karma-single-run

@@ -49,7 +49,7 @@
 
   angular.module('app.directives', []);
 
-  angular.module('app.filters', []);
+  angular.module('app.filters', [])
 
   angular.module('app.components', [
     'users',
