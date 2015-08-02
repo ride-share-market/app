@@ -16,7 +16,8 @@
       };
     });
 
-  function RidesharesLatestCtrl($q, $mdMedia, RidesharesGetSvc, AppLocalStorageSvc, RidesharesSortSvc) {
+  function RidesharesLatestCtrl($q, $mdMedia,
+                                RidesharesGetSvc, AppLocalStorageSvc, RidesharesSortSvc, RidesharesSortCountrySvc) {
 
     var vm = this;
 
@@ -47,12 +48,30 @@
            and the pagination page is greater than 1
            and there are less items a for a complete paginated page
            reset to page 1
-          */
+           */
           if (res[1] && res[1] > 1 && res[0].length < vm.pagination.itemsPerPage) {
-              vm.pagination.current = 1;
+            vm.pagination.current = 1;
           }
 
-          return RidesharesSortSvc.latest(res[0]).then(function(res) {
+          vm.chartObject = {
+            type: 'PieChart',
+            displayed: true,
+            data: {
+              cols: [
+                {id: 'country', label: 'Country', type: 'string'},
+                {id: 'ridshareCount', label: 'Rideshare Count', type: 'number'}
+              ],
+              rows: RidesharesSortCountrySvc.googleChartData(res[0])
+            },
+            options: {
+              title: 'Global Rideshare Distribution',
+              width: 500,
+              height: 350,
+              displayExactValues: true
+            }
+          };
+
+          return RidesharesSortSvc.latest(res[0]).then(function (res) {
             vm.rideshares = res;
           });
 
@@ -69,11 +88,11 @@
     };
 
     // This is useful if the user paginates several pages into the data, clicks into, then goes back.
-    vm.pageChanged = function(newPageNumber) {
+    vm.pageChanged = function (newPageNumber) {
       AppLocalStorageSvc.setItem('rsmLatestCurrentPage', newPageNumber);
     };
 
-    vm.isSmall = function() {
+    vm.isSmall = function () {
       return $mdMedia('gt-sm');
     };
 

@@ -35,6 +35,7 @@ module.exports = function (config) {
       'app/bower_components/pickadate/lib/picker.date.js',
       'app/bower_components/pickadate/lib/picker.time.js',
       'app/bower_components/angularytics/dist/angularytics.min.js',
+      'app/bower_components/angular-google-chart/ng-google-chart.js',
 
       // First load app.js
       'app/components/app/app.js',

@@ -46,7 +46,8 @@
   angular
     .module('rideshares.directives', [
       'ngAutocomplete',
-      'angularUtils.directives.dirPagination'
+      'angularUtils.directives.dirPagination',
+      'googlechart'
     ]);
 
 })();
