@@ -77,30 +77,31 @@
         </copy>
     </target>
 
-    <target name="gulp-test" depends="copy-config">
+    <target name="gulp-lint" depends="copy-config">
         <exec executable="${node.path}/gulp" failonerror="true">
             <env key="PATH" path="${node.path}:${env.PATH}"/>
-            <arg value="test"/>
+            <arg value="lint-ci"/>
+        </exec>
+    </target>
+
+    <target name="gulp-test" depends="gulp-lint">
+        <exec executable="${node.path}/gulp" failonerror="true">
+            <env key="PATH" path="${node.path}:${env.PATH}"/>
+            <arg value="test-ci"/>
         </exec>
     </target>
 
     <target name="gulp-karma" depends="gulp-test">
         <exec executable="${node.path}/gulp" failonerror="true">
             <env key="PATH" path="${node.path}:${env.PATH}"/>
-            <arg value="karma-single-run"/>
-        </exec>
-    </target>
-
-    <target name="gulp-lint" depends="gulp-karma">
-        <exec executable="${node.path}/gulp" failonerror="true">
-            <env key="PATH" path="${node.path}:${env.PATH}"/>
-            <arg value="lint"/>
+            <arg value="karma-ci"/>
         </exec>
     </target>
 
     <!-- Run an extra build-templatecache -->
     <!-- TODO: find out why extra build-templatecache is needed, build-templatecache in build doesn't work first time. -->
-    <target name="gulp-build-templatecache" depends="gulp-lint">
+    <target name="gulp-build-templatecache" depends="gulp-karma">
+        <echo message="==> Extra build-templatecache required (bug fix needed)"/>
         <exec executable="${node.path}/gulp" failonerror="true">
             <env key="PATH" path="${node.path}:${env.PATH}"/>
             <arg value="build-templatecache"/>
