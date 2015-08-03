@@ -16,7 +16,9 @@
       };
     });
 
-  function RidesharesUpdateCtrl($q, $location, RidesharesGetSvc, JwtSvc, RidesharesServerSideFormErrorsSvc) {
+  function RidesharesUpdateCtrl($q, $location, Angularytics,
+                                AppTimingSvc,
+                                RidesharesGetSvc, JwtSvc, RidesharesServerSideFormErrorsSvc) {
 
     var vm = this;
 
@@ -78,8 +80,12 @@
     };
 
     vm.remove = function () {
+
+      var timing = AppTimingSvc.timing();
+
       vm.rideshare.remove().then(
         function (res) {
+          Angularytics.trackTiming('Rideshare', 'Removed', timing());
           $location.path(res.meta.location);
         },
         function () {

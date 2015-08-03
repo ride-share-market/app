@@ -9,6 +9,7 @@
         $httpBackend,
         elm;
 
+      beforeEach(module('app.services'));
       beforeEach(module('rideshares.services'));
       beforeEach(module('rideshares.directives', function ($provide) {
 
@@ -29,6 +30,15 @@
               return deferred.promise;            }
           };
         });
+
+        $provide.factory('Angularytics', function () {
+          return {
+            trackTiming: function() {
+              return true;
+            }
+          };
+        });
+
       }));
 
       // Load the test cached HTML templates

@@ -16,7 +16,8 @@
       };
     });
 
-  function RidesharesShowCtrl($q, RidesharesGetSvc, JwtSvc) {
+  function RidesharesShowCtrl($q, Angularytics,
+                              AppTimingSvc, RidesharesGetSvc, JwtSvc) {
 
     var vm = this;
 
@@ -26,6 +27,7 @@
      * Get the rideshare and current user then set view ready
      */
     function init() {
+      var timing = AppTimingSvc.timing();
       $q.all([
         RidesharesGetSvc.getById(vm.rideshareId),
         JwtSvc.getUser()
@@ -36,6 +38,7 @@
           if (vm.user && (vm.rideshare.user._id === vm.user.id)) {
             vm.isOwner = true;
           }
+          Angularytics.trackTiming('Rideshare', 'Show', timing());
         },
         function (err) {
           vm.errors = err;
