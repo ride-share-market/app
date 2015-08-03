@@ -53,6 +53,8 @@
             vm.pagination.current = 1;
           }
 
+          var chartData = RidesharesSortCountrySvc.googleChartData(res[0]);
+
           vm.chartObject = {
             type: 'PieChart',
             displayed: true,
@@ -61,7 +63,7 @@
                 {id: 'country', label: 'Country', type: 'string'},
                 {id: 'ridshareCount', label: 'Rideshare Count', type: 'number'}
               ],
-              rows: RidesharesSortCountrySvc.googleChartData(res[0])
+              rows: chartData
             },
             options: {
               title: 'Global Rideshare Distribution',
@@ -69,6 +71,17 @@
               height: 350,
               displayExactValues: true
             }
+          };
+
+          // On click/select of pie chart data, apply filter.
+          vm.selected = function(item) {
+            if(item) {
+              vm.q = chartData[item.row].c[0].v;
+            }
+            else {
+              vm.q = '';
+            }
+
           };
 
           return RidesharesSortSvc.latest(res[0]).then(function (res) {

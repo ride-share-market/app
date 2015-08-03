@@ -14,7 +14,7 @@
         <h1>Latest Rideshares</h1>
 
         <label for="search"><b>Search</b>:</label>
-        <input ng-model="q" id="search" placeholder="Search for a Rideshare">
+        <input ng-model="vm.q" id="search" placeholder="Search for a Rideshare">
         <br/><br/>
 
         <md-content ng-if="!vm.isSmall()">
@@ -22,7 +22,7 @@
                 <!--<md-subheader class="md-no-sticky">3 line item</md-subheader>-->
                 <md-list-item
                         class="md-3-line"
-                        dir-paginate="item in vm.rideshares | filter:q | itemsPerPage: vm.pagination.itemsPerPage"
+                        dir-paginate="item in vm.rideshares | filter:vm.q | itemsPerPage: vm.pagination.itemsPerPage"
                         current-page="vm.pagination.current">
                     <div class="md-list-item-text">
                         <a ng-href="#!/rideshares/{{ ::item._id }}">{{ ::item.origin }}</a><br/>
@@ -48,7 +48,7 @@
             </thead>
 
             <tbody>
-            <tr dir-paginate="item in vm.rideshares | filter:q | itemsPerPage: vm.pagination.itemsPerPage"
+            <tr dir-paginate="item in vm.rideshares | filter:vm.q | itemsPerPage: vm.pagination.itemsPerPage"
                 current-page="vm.pagination.current">
 
                 <td>
@@ -80,7 +80,7 @@
         </div>
 
         <div style="display: flex; justify-content: flex-start">
-            <div google-chart chart="vm.chartObject" style="font-size: 18px"></div>
+            <div google-chart chart="vm.chartObject" on-select="vm.selected(selectedItem)" style="font-size: 18px"></div>
         </div>
 
 
