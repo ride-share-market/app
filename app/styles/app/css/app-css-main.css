@@ -28,3 +28,6 @@ a:active {
 ng-md-icon.white {
   fill: #fff;
 }
+.main {
+  font-size: 1.3em;
+}
