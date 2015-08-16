@@ -37,7 +37,7 @@
   "resolutions": {
     "angular-material": "~0.10.0",
     "lodash": "~3.10.0",
-    "angular": "1.4.3",
+    "angular": "1.4.4",
     "angular-mocks": "~1.4.3",
     "angular-material-icons": "~0.5.0",
     "angular-utils-pagination": "~0.8.3",
