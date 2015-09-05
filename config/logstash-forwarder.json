@@ -11,7 +11,7 @@
       "paths": [
         "/srv/ride-share-market-app/log/*.log"
       ],
-      "fields": {"type": "rsm-app"}
+      "fields": {"type": "rsm-app", "fqdn": "${FQDN}"}
     }
   ]
 }
