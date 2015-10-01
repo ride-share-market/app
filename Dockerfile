@@ -4,7 +4,7 @@ MAINTAINER Ride Share Market "systemsadmin@ridesharemarket.com"
 # APT cache (Updating APT_REFRESHED_AT will 'cache bust' and re-run apt command)
 ENV APT_REFRESHED_AT 2015-10-01.1
 RUN apt-get -yqq update && \
-    apt-get -y install sudo && \
+    apt-get -y install sudo logrotate && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 

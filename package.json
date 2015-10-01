@@ -1,6 +1,6 @@
 {
   "name": "ride-share-market-app",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "ridesharemarket.com AngularJS Web App",
   "private": true,
   "main": "server.js",
