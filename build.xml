@@ -5,15 +5,15 @@
 
     <property name="config.src" value="/var/jenkins_home/jobs-config/app/config/env"/>
 
-    <property name="node.version" value="1.5.1"/>
+    <property name="node.version" value="4.1.1"/>
 
     <property name="node.src" value="/var/jenkins_home/tmp"/>
 
-    <property name="node.path" value="${node.src}/iojs-v${node.version}-linux-x64/bin"/>
+    <property name="node.path" value="${node.src}/node-v${node.version}-linux-x64/bin"/>
 
-    <property name="node.archive" value="iojs-v${node.version}-linux-x64.tar.gz"/>
+    <property name="node.archive" value="node-v${node.version}-linux-x64.tar.gz"/>
 
-    <property name="node.url" value="https://iojs.org/download/release/v${node.version}/${node.archive}"/>
+    <property name="node.url" value="https://nodejs.org/dist/v${node.version}/${node.archive}"/>
 
     <!-- Test if node exists -->
     <target name="test-node">
