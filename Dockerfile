@@ -1,4 +1,4 @@
-FROM node:4.1.1
+FROM node:4.1.2
 MAINTAINER Ride Share Market "systemsadmin@ridesharemarket.com"
 
 # APT cache (Updating APT_REFRESHED_AT will 'cache bust' and re-run apt command)
